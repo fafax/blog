@@ -18,7 +18,7 @@ USE bdd_blog_php ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Role (
   id_role INT NOT NULL AUTO_INCREMENT,
-  role VARCHAR(45),
+  role VARCHAR(100),
   PRIMARY KEY (id_role, role),
   UNIQUE INDEX role_UNIQUE (role ASC))
 ENGINE = InnoDB;
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS User (
   email VARCHAR(255) NULL,
   url_img VARCHAR(255) NULL,
   create_date DATE NULL,
-  password VARCHAR(43) NULL,
+  password VARCHAR(255) NULL,
   Role_id_role INT NOT NULL,
   PRIMARY KEY (id_user),
   INDEX fk_User_Role_id (Role_id_role ASC),
@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS Post (
   id_post INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(100) NOT NULL,
-  lede VARCHAR(255) NULL,
+  lede TEXT(1000) NULL,
   text LONGTEXT NULL,
   url_image VARCHAR(255) NULL,
   create_date DATE NOT NULL,
@@ -84,6 +84,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS Comment (
   id_comment INT NOT NULL AUTO_INCREMENT,
   text LONGTEXT NULL,
+  create_date DATE NOT NULL,
   Status_id_status INT NOT NULL,
   Post_id_post INT NOT NULL,
   User_id_user INT NOT NULL,
