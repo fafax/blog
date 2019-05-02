@@ -18,7 +18,7 @@ USE bdd_blog_php ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Role (
   id_role INT NOT NULL AUTO_INCREMENT,
-  role VARCHAR(100),
+  role VARCHAR(20),
   PRIMARY KEY (id_role, role),
   UNIQUE INDEX role_UNIQUE (role ASC))
 ENGINE = InnoDB;
@@ -73,7 +73,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Status (
   id_status INT NOT NULL AUTO_INCREMENT,
-  status VARCHAR(45) NULL,
+  status VARCHAR(7) NULL,
   PRIMARY KEY (id_status))
 ENGINE = InnoDB;
 

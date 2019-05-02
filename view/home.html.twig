@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon bloc PHP</title>
-</head>
-<body>
-    <p>test php 2 {{ name }}</p>
-</body>
-</html>
+{% include 'header.php' %}
+
+   <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+               {% for post in posts %}
+                  <div class="post-preview">
+                     <a href="#">
+                        <h2 class="post-title">{{post.title}}</h2>
+                        <h3 class="post-subtitle">{{post.lede}}</h3>
+                     </a>
+                     <p class="post-meta">Créer par  le  {{post.create_date}}</p>
+                  </div>
+                  <hr>
+               {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% include 'footer.php' %}

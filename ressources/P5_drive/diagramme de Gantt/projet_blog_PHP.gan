@@ -39,7 +39,7 @@
         <task id="2" name="Create tree files" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
         <task id="3" name="Create database schema" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
         <task id="4" name="Create data set for test" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
-        <task id="5" name="Create different model class (entity)" color="#8cb6ce" meeting="false" start="2019-04-10" duration="1" complete="0" thirdDate="2019-04-10" thirdDate-constraint="0" expand="true"/>
+        <task id="5" name="Create differrent model class (entity)" color="#8cb6ce" meeting="false" start="2019-04-10" duration="1" complete="0" thirdDate="2019-04-10" thirdDate-constraint="0" expand="true"/>
         <task id="6" name="Create different model class (manager)" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
         <task id="10" name="Create views" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true">
             <task id="7" name="Create view home" color="#8cb6ce" meeting="false" start="2019-04-10" duration="1" complete="0" thirdDate="2019-04-10" thirdDate-constraint="0" expand="true"/>
@@ -50,7 +50,7 @@
             <task id="11" name="Create view detail Post" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
             <task id="12" name="Create view contact" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
             <task id="13" name="Create view add Comment" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
-            <task id="14" name="Create view administrator" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
+            <task id="14" name="Create view administrateur" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>
         </task>
         <task id="19" name="Create controller" color="#8cb6ce" meeting="false" start="2019-04-10" duration="1" complete="0" thirdDate="2019-04-10" thirdDate-constraint="0" expand="true">
             <task id="22" name="Create controller add post" meeting="false" start="2019-04-10" duration="1" complete="0" expand="true"/>

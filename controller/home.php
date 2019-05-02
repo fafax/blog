@@ -1,6 +1,14 @@
 <?php
+require "../model/PostManager.php";
 
-$loader = new Twig_Loader_Filesystem('view');
+$loader = new Twig_Loader_Filesystem('../view');
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
-echo $twig->render('home.html.twig', ['name' => 'Fabien']);
+
+
+ 
+$postManager = new PostManager();
+
+$data = $postManager->getAllPost();
+
+echo $twig->render('home.html.twig', ['posts' => $data]);
