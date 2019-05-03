@@ -1,20 +1,25 @@
 {% include 'header.php' %}
 
    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8">
-               {% for post in posts %}
-                  <div class="post-preview">
-                     <a href="index.php?page={{post.id_post}}">
-                        <h2 class="post-title">{{post.title}}</h2>
-                        <h3 class="post-subtitle">{{post.lede}}</h3>
-                     </a>
-                     <p class="post-meta">Créer par  le  {{post.create_date}}</p>
+   {% for post in posts %}
+        <div class="row post-list">
+            
+               <div class="col-md-12 col-lg-8">
+                     <div class="post-preview">
+                        <a href="index.php?page={{post.id_post}}">
+                           <h2 class="post-title">{{post.title}}</h2>
+                           <h3 class="post-subtitle">{{post.lede}}</h3>
+                        </a>
+                        <p class="post-meta">Créer par  le  {{post.create_date}}</p>
+                     </div>
                   </div>
-                  <hr>
-               {% endfor %}
+                  <div class="col-md-12 col-lg-4">
+                     <img class="img-post" src="../public/assets/ressources/img/{{post.url_image}}">
+                  </div>
+               
             </div>
-        </div>
+        
+      {% endfor %}
     </div>
 
 {% include 'footer.php' %}

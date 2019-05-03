@@ -11,6 +11,15 @@ header.masthead{
    text-align: center;
 }
 
+.img-post{
+   width: 100%;
+   height: auto;
+}
+
+.post-list{
+   margin-bottom: 20px;
+}
+
 /* form */
 
 @media (max-width:767px) {
@@ -63,7 +72,7 @@ header.masthead{
 }
 
 .contact-clean form textarea.form-control {
-  min-height: 100px;
+  min-height: 200px;
   max-height: 260px;
   padding-top: 10px;
   resize: vertical;
@@ -100,6 +109,10 @@ header.masthead{
 
 /* about */
 
+.text-about{
+   text-align: justify;
+}
+
 .highlight-phone {
   color: #313437;
   padding: 50px 0 55px;
@@ -118,7 +131,7 @@ header.masthead{
 
 .highlight-phone h2 {
   font-weight: bold;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   line-height: 1.5;
   padding-top: 0;
   margin-top: 0;
