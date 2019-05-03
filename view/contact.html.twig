@@ -1,3 +1,24 @@
 {% include 'header.php' %}
- <p>contact</p>
+
+ <div class="contact-clean">
+        <form method="post">
+            <h2 class="text-center">Contactez-nous</h2>
+            <div class="form-group">
+               <input class="form-control" type="text" name="name" placeholder="Nom">
+            </div>
+            <div class="form-group">
+               <input class="form-control" type="email" name="email" placeholder="Email">
+               {# <small class="form-text text-danger">Please enter a correct email address.</small> #}
+            </div>
+            <div class="form-group">
+               <textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea>
+            </div>
+            <div class="form-group btn-center">
+               <button class="btn btn-primary" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+
 {% include 'footer.php' %}
+
+{# class is-invalid si invalide champ #}

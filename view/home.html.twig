@@ -5,7 +5,7 @@
             <div class="col-md-10 col-lg-8">
                {% for post in posts %}
                   <div class="post-preview">
-                     <a href="#">
+                     <a href="index.php?page={{post.id_post}}">
                         <h2 class="post-title">{{post.title}}</h2>
                         <h3 class="post-subtitle">{{post.lede}}</h3>
                      </a>

@@ -7,6 +7,7 @@
     <title>Mon Blog PHP</title>
     <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
 </head>
 
 <body>
@@ -18,19 +19,26 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Articles</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=about">A propos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=contact">Contact</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=administration">Administration</a></li>
                 </ul>
         </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image:url('../public/assets/ressources/img/home-bg.jpg');">
+
+      <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="site-heading">
-                        <h1>P5 Blog php</h1><span class="subheading">Le Même Code Pour Tous</span></div>
+                        <h3>Fabien HAMAYON</h3>
+                        <h5>Le développeur à l'écoute de vos besoins</h5>
+                        <br>
+                        <p class="subheading">{{title}}</p>
+                     </div>
                 </div>
             </div>
         </div>
     </header>
+
     

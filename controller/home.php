@@ -11,4 +11,4 @@ $postManager = new PostManager();
 
 $data = $postManager->getAllPost();
 
-echo $twig->render('home.html.twig', ['posts' => $data]);
+echo $twig->render('home.html.twig', ['posts' => $data, 'title'=> "Articles"]);

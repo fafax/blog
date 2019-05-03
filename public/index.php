@@ -9,6 +9,11 @@ if(isset($_GET['page'])){
       case 'contact':
          require_once '../controller/contact.php';
          break;
+      case 'administration':
+         require_once '../controller/administration.php';
+         break;
+      default:
+         require_once '../controller/detail.php';
    }
 }else{
    require_once '../controller/home.php';
