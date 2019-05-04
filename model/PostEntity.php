@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class PostEntity 
 {
    private $id_post;

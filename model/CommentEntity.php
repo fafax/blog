@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class CommentEntity 
 {
    private $id_comment;

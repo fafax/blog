@@ -1,5 +1,6 @@
 <?php
-require "../model/PostManager.php";
+
+require  '../vendor/autoload.php';
 
 $loader = new Twig_Loader_Filesystem('../view');
 $twig = new Twig_Environment($loader, ['cache' => false]);
@@ -7,7 +8,7 @@ $twig = new Twig_Environment($loader, ['cache' => false]);
 
 
  
-$postManager = new PostManager();
+$postManager = new App\PostManager();
 
 $data = $postManager->getAllPost();
 
