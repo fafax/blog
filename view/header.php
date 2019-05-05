@@ -17,9 +17,9 @@
                 class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Articles</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=about">A propos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=contact">Contact</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=administration">Administration</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=about">A propos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=contact">Contact</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=administration">Administration</a></li>
                 </ul>
         </div>
         </div>

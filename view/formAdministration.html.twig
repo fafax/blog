@@ -1,0 +1,20 @@
+{% include 'header.php' %}
+
+ <div class="contact-clean">
+        <form method="post">
+            <h2 class="text-center">Identification</h2>
+            <div class="form-group">
+               <input class="form-control" type="text" name="name" placeholder="Identifiant">
+            </div>
+            <div class="form-group">
+               <input class="form-control" type="password" name="email" placeholder="Mot de passe">
+               {# <small class="form-text text-danger">Please enter a correct email address.</small> #}
+            </div>
+         
+            <div class="form-group btn-center">
+               <button class="btn btn-primary" type="submit">Connexion</button>
+            </div>
+        </form>
+    </div>
+ 
+{% include 'footer.php' %}

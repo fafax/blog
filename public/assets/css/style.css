@@ -235,5 +235,7 @@ header.masthead{
   opacity: 0.2;
 }
 
-
-
+.chartjs-render-monitor {
+   height: 30vw !important;
+   width: 40vw !important;
+}
