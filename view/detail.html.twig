@@ -1,3 +1,14 @@
 {% include 'header.php' %}
-<p>{{post.lede}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="{{post.url_image}}" alt="phote de l'article {{post.title}}">
+            <h2 class="post-title center">{{post.title}}</h2>
+            <h4 class="post-subtitle center">{{post.lede}}</h4>
+            <p class="justify">{{post.text}}</p>
+            <p>Ecrit le {{post.create_date|date("d-m-Y")}} par {{post.last_name}} {{post.first_name}}</p>
+        </div>
+    </div>
+</div>
+
 {% include 'footer.php' %}

@@ -1,7 +1,13 @@
+.center{
+  text-align: center;
+}
+.justify{
+  text-align: justify;
+}
+
 .btn.btn-primary{
    border-radius: 25px;
 }
-
 
 .btn.btn-primary:hover{
       background-color: #00657b!important;

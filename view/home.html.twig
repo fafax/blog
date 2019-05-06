@@ -10,11 +10,11 @@
                            <h2 class="post-title">{{post.title}}</h2>
                            <h3 class="post-subtitle">{{post.lede}}</h3>
                         </a>
-                        <p class="post-meta">Créer par {{post.last_name}}  {{post.first_name}} le  {{post.create_date|date("m-d-Y")}}</p>
+                        <p class="post-meta">Créer par {{post.last_name}}  {{post.first_name}} le  {{post.create_date|date("d-m-Y")}}</p>
                      </div>
                   </div>
                   <div class="col-md-12 col-lg-4">
-                     <img class="img-post" src="../public/assets/ressources/img/{{post.url_image}}">
+                     <img class="img-post" src="../public/assets/ressources/img/{{post.url_image}}" alt="phote de l'article {{post.title}}>
                   </div>
                
             </div>
