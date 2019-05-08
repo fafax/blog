@@ -26,14 +26,4 @@ class PostManager
       return $post;
    }
 
-   public function getComment($id){
-      $bdd = new Connection();
-      $bd = $bdd->get_bd();
-      $req = $bd->prepare('SELECT id_comment,text,create_date,Status_id_status,Post_id_post FROM comment WHERE Post_id_post = :id ORDER BY id_comment DESC');
-      $req->bindParam(":id", $id, PDO::PARAM_INT);
-      $req->execute(array("id"=> (int)$id));
-      $comments = $req->fetchAll(PDO::FETCH_OBJ);
-      return $comments;
-   }
-
 }

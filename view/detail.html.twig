@@ -1,14 +1,51 @@
 {% include 'header.php' %}
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <img src="{{post.url_image}}" alt="phote de l'article {{post.title}}">
+   <div class="row">
+      <div class="col-sm-12">
+           <div class="center">
+               <img class="img-detail" src="../public/assets/ressources/img/{{post.url_image}}" alt="phote de l'article {{post.title}}">
+           </div>
             <h2 class="post-title center">{{post.title}}</h2>
             <h4 class="post-subtitle center">{{post.lede}}</h4>
             <p class="justify">{{post.text}}</p>
             <p>Ecrit le {{post.create_date|date("d-m-Y")}} par {{post.last_name}} {{post.first_name}}</p>
-        </div>
-    </div>
+      </div>
+   </div>
+
+   {% if count <= 1 %}
+   <h6>Commentaire ({{count}})</h6>
+   {% else %}
+   <h6>Commentaires ({{count}})</h6>
+   {%endif%}
+   <hr>
+   {% for comment in comments %}
+      <div class="row comment-post">
+         <div>
+            <p class="info-comment">{{comment.first_name}} {{comment.last_name}} {{comment.create_date}}</p>
+            <p>{{comment.text}} </p>
+         </div>
+      </div>
+   {% endfor %}
+
+   <button class="btn btn-primary" href="#" onclick="addComment()" id="btn-add-comment">Ajouter un commentaire</button>
+
+   <form class="form-comment invisible" id="btn-comment">
+      <label for="inputComment">Commentaire</label>
+      <input type="text" class="form-control" id="inputComment" placeholder="Votre commentaire"
+         aria-describedby="commentInfo">
+      <small id="commentInfo" class="form-text text-muted">
+         Votre commentaire ne sera affiché qu'après validation de l'administrateur.
+      </small>
+      <div class="all-btn-comment">
+         <button class="btn btn-warning" id="btn-cancel">Annuler</button>
+         <button class="btn btn-primary" href="#" type="submit">Valider</button>
+      </div>
+      
+   </form>
+
 </div>
+
+
+
 
 {% include 'footer.php' %}

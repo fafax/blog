@@ -5,10 +5,53 @@
   text-align: justify;
 }
 
-.btn.btn-primary{
+.img-detail{
+   width: 40vw;
+   height: auto;
+   margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+   .img-detail{
+      width: 80vw;
+   }
+}
+/* comment */
+.info-comment{
+   font-size: 0.8em;
+}
+.comment-post{
+   border: 1px solid lightgray;
+   box-shadow: 5px 5px lightgrey;
+   border-radius: 25px;
+   padding: 0px 10px;
+   margin-bottom: 20px;
+}
+
+.all-btn-comment{
+   margin-top: 25px;
+}
+
+.invisible{
+   display: none;
+}
+
+.subheading{
+   font-weight: 600 !important;
+}
+
+span.fa-stack.fa-lg:hover{
+   color:#00657b;
+}
+
+.btn.btn-primary, .btn.btn-warning{
    border-radius: 25px;
 }
 
+.btn.btn-warning:hover{
+        background-color: orange!important;
+      border-color: orange!important;
+}
 .btn.btn-primary:hover{
       background-color: #00657b!important;
       border-color: #00657b!important;

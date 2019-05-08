@@ -20,9 +20,9 @@ INSERT INTO User (first_name, last_name, email, url_img, create_date, password, 
 -- ajout data pour la table post
 -- ------------------------------------------------------------------------------
 INSERT INTO Post (title, lede, text, url_image, create_date, User_id_user) VALUES
-   ("Mon premier article", "Je suis le chapo du premier article", "Texte du premiere article", " ","2019-04-15",1),
-   ("Mon deuxième article", "Je suis le chapo du deuxième article", "Texte du deuxième article", " ","2019-04-16",3),
-   ("Mon troisième article", "Je suis le chapo du troisième article", "Texte du troisième article", " ","2019-04-17",1);
+   ("Mon premier article", "Je suis le chapo du premier article", "Texte du premiere article", "1 creer un jeu vidéo.png","2019-04-15",1),
+   ("Mon deuxième article", "Je suis le chapo du deuxième article", "Texte du deuxième article", "devenir un expert en javascript.png ","2019-04-16",3),
+   ("Mon troisième article", "Je suis le chapo du troisième article", "Texte du troisième article", "inventaire d'objet.png ","2019-04-17",1);
 
 -- ------------------------------------------------------------------------------
 -- ajout data pour la table Status

@@ -30,6 +30,7 @@
     <script src="../public/assets/js/jquery.min.js"></script>
     <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../public/assets/js/clean-blog.js"></script>
+    <script src="../public/assets/js/main.js"></script>
 </body>
 
 </html>
