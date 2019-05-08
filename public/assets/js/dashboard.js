@@ -40,3 +40,42 @@ function comments() {
    page3.classList.remove("visible");
 } 
 
+const tabInwait = document.getElementById("inwait-tab");
+const tabValid = document.getElementById("valid-tab");
+const tabInvalid = document.getElementById("invalid-tab");
+const inwait = document.getElementById("inwait");
+const valid = document.getElementById("valid");
+const invalid = document.getElementById("invalid");
+
+function f_inwait() {
+   if (!tabInwait.classList.contains("active")) {
+      tabInwait.classList.add("active");
+      inwait.classList.add("active");
+   }
+   tabValid.classList.remove("active");
+   tabInvalid.classList.remove("active");
+   valid.classList.remove("active");
+   invalid.classList.remove("active");
+}
+
+function f_valid() {
+   if (!tabValid.classList.contains("active")) {
+      tabValid.classList.add("active");
+      valid.classList.add("active");
+   }
+   tabInwait.classList.remove("active");
+   tabInvalid.classList.remove("active");
+   inwait.classList.remove("active");
+   invalid.classList.remove("active");
+}
+
+function f_invalid() {
+   if (!tabInvalid.classList.contains("active")) {
+      tabInvalid.classList.add("active");
+      invalid.classList.add("active");
+   }
+   tabInwait.classList.remove("active");
+   tabValid.classList.remove("active");
+   inwait.classList.remove("active");
+   valid.classList.remove("active");
+}

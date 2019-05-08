@@ -23,3 +23,7 @@ function cancelComment(event){
 if (btnCancel){
    btnCancel.addEventListener("click", cancelComment);
 }
+
+function logout() {
+   window.location = "http://localhost/blog_PHP/public/index.php";
+}
