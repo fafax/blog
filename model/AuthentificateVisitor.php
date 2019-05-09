@@ -2,7 +2,11 @@
 
 namespace App;
 
-class AuthentificateVisitor extends User 
+class AuthentificateVisitor 
 {
+
+   public  function checkAuthentification($identifiant, $mdp){
+
+   }
    
 }
