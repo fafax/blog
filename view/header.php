@@ -19,7 +19,12 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Articles</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=about">A propos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=contact">Contact</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=administration">Administration</a></li>
+                 
+                  {% if session.connect == false %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=connexion">Connexion</a></li>
+                  {% else %}
+                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?post=deconnexion">Deconnexion</a></li>
+                  {% endif %}
                 </ul>
         </div>
         </div>

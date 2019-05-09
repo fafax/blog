@@ -22,6 +22,7 @@
                            </span>
                         </li>
                     </ul>
+                    <a class="nav-link center" href="index.php?post=administration">Administration</a>
                     <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Fabien HAMAYON 2019</p>
                 </div>
             </div>

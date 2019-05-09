@@ -29,9 +29,9 @@
 
    <button class="btn btn-primary" href="#" onclick="addComment()" id="btn-add-comment">Ajouter un commentaire</button>
 
-   <form class="form-comment invisible" id="btn-comment">
+   <form class="form-comment invisible" id="btn-comment" action="#" method="POST">
       <label for="inputComment">Commentaire</label>
-      <input type="text" class="form-control" id="inputComment" placeholder="Votre commentaire"
+      <input type="text" class="form-control" id="inputComment" name="comment" placeholder="Votre commentaire"
          aria-describedby="commentInfo">
       <small id="commentInfo" class="form-text text-muted">
          Votre commentaire ne sera affiché qu'après validation de l'administrateur.

@@ -4,7 +4,7 @@ namespace App;
 
 use PDO;
 
-class Connection 
+class Connexion 
 {
   
    public function get_bd()

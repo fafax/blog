@@ -7,7 +7,7 @@ use PDO;
 class CommentManager
 {
       public function getComment($id){
-      $bdd = new Connection();
+      $bdd = new Connexion();
       $bd = $bdd->get_bd();
       $req = $bd->prepare('SELECT id_comment,text,comment.create_date,status, first_name, last_name
                            FROM comment, user ,status
@@ -18,4 +18,6 @@ class CommentManager
       $comments = $req->fetchAll(PDO::FETCH_OBJ);
       return $comments;
    }
+
+   
 }
