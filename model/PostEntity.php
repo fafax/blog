@@ -16,7 +16,7 @@ class PostEntity
    /**
     * Get the value of id_post
     */ 
-   public function getId_post()
+   public function getIdPost()
    {
       return $this->id_post;
    }
@@ -84,7 +84,7 @@ class PostEntity
    /**
     * Get the value of url_image
     */ 
-   public function getUrl_image()
+   public function getUrlImage()
    {
       return $this->url_image;
    }
@@ -94,7 +94,7 @@ class PostEntity
     *
     * @return  self
     */ 
-   public function setUrl_image($url_image)
+   public function setUrlImage($url_image)
    {
       $this->url_image = $url_image;
 
@@ -104,7 +104,7 @@ class PostEntity
    /**
     * Get the value of create_date
     */ 
-   public function getCreate_date()
+   public function getCreateDate()
    {
       return $this->create_date;
    }
@@ -114,7 +114,7 @@ class PostEntity
     *
     * @return  self
     */ 
-   public function setCreate_date($create_date)
+   public function setCreateDate($create_date)
    {
       $this->create_date = $create_date;
 
@@ -124,7 +124,7 @@ class PostEntity
    /**
     * Get the value of user_id_user
     */ 
-   public function getUser_id_user()
+   public function getUserIdUser()
    {
       return $this->user_id_user;
    }
@@ -134,7 +134,7 @@ class PostEntity
     *
     * @return  self
     */ 
-   public function setUser_id_user($user_id_user)
+   public function setUserIdUser($user_id_user)
    {
       $this->user_id_user = $user_id_user;
 

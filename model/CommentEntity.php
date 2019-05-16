@@ -42,7 +42,7 @@ class CommentEntity
    /**
     * Get the value of status_id_status
     */ 
-   public function getStatus_id_status()
+   public function getStatusIdStatus()
    {
       return $this->status_id_status;
    }
@@ -52,7 +52,7 @@ class CommentEntity
     *
     * @return  self
     */ 
-   public function setStatus_id_status($status_id_status)
+   public function setStatusIdStatus($status_id_status)
    {
       $this->status_id_status = $status_id_status;
 
@@ -62,7 +62,7 @@ class CommentEntity
    /**
     * Get the value of post_id_post
     */ 
-   public function getPost_id_post()
+   public function getPostIdPost()
    {
       return $this->post_id_post;
    }
@@ -72,7 +72,7 @@ class CommentEntity
     *
     * @return  self
     */ 
-   public function setPost_id_post($post_id_post)
+   public function setPostIdPost($post_id_post)
    {
       $this->post_id_post = $post_id_post;
 
@@ -82,7 +82,7 @@ class CommentEntity
    /**
     * Get the value of user_id_user
     */ 
-   public function getUser_id_user()
+   public function getUserIdUser()
    {
       return $this->user_id_user;
    }
@@ -92,7 +92,7 @@ class CommentEntity
     *
     * @return  self
     */ 
-   public function setUser_id_user($user_id_user)
+   public function setUserIdUser($user_id_user)
    {
       $this->user_id_user = $user_id_user;
 
