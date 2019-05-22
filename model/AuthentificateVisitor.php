@@ -22,7 +22,7 @@ class AuthentificateVisitor
     {
       $bdd = new Connexion();
       $bd = $bdd->getBd();
-      $response = $bd->prepare('SELECT * FROM user WHERE id = :id');
+      $response = $bd->prepare('SELECT * FROM user WHERE id_user = :id');
       $response->bindValue(':id', $id);
       $response->execute();
       return $response->fetchObject('App\userEntity');
@@ -43,14 +43,15 @@ class AuthentificateVisitor
     public function checkAuthentification(string $email, string $password)
     {
         if ($result = $this->findByEmail($email)) {
-            if (password_verify($password, $result['password'])) {
-                $user = $this->find($result['id']);
-                $_SESSION['id'] = $user->getId();
+            // if (password_verify($password, $result['password'])) {
+                $user = $this->find($result['id_user']);
+                $_SESSION['id'] = $user->getIdUser();
                 $_SESSION['connect'] = true;
                 return $user;
-            }
-            return false;
+            // }
+            // return false;
         }
+        $_SESSION['id'] = "noConnect";
         return false;
     }
    

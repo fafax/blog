@@ -10,7 +10,7 @@
    border: 1px solid green !important;
 }
 
-.errorSendMail{
+.errorSendMail , .error{
    width: 30vw !important;
     margin: 25px auto 0 auto !important;
    color: red !important;
@@ -23,6 +23,11 @@
 .img-detail{
    width: 40vw;
    height: auto;
+   margin-bottom: 25px;
+}
+
+.container-Error{
+   text-align: center;
    margin-bottom: 25px;
 }
 

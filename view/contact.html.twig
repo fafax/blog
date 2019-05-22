@@ -1,6 +1,9 @@
 {% include 'header.php' %}
 
  <div class="contact-clean">
+         <div class="container-Error">
+            <p class="{{class}}">{{message}}</p>
+         </div>
         <form method="post" action="../public/index.php?post=contact" method="POST">
             <h2 class="text-center">Contactez-nous</h2>
             <div class="form-group">
@@ -17,10 +20,7 @@
                <button class="btn btn-primary" type="submit">Envoyer</button>
             </div>
         </form>
-        <div class="center {{class}}">
-         <p>{{message}}</p>
-        </div>
-        
+
     </div>
 
 {% include 'footer.php' %}
