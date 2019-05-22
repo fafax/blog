@@ -7,13 +7,14 @@ $connexion = false;
 
 $_SESSION['connect'] = false;
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $user = new App\AuthentificateVisito();
-    $infoConnexion = $user->checkAuthentification($_POST['email'],$_POST['password']);
-    exit;
+if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
+    $user = new App\AuthentificateVisitor();
+    $infoConnexion = $user->checkAuthentification($_POST['identifiant'],$_POST['mdp']);
 }
 
-
+if($infoConnexion){
+   $connexion = true;
+}
 
 
 if($connexion)

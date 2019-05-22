@@ -227,6 +227,49 @@ header a {
     text-align: center;
 }
 
+
+
+@media screen and (max-width: 800px) {
+
+.responsive-table-line td:before { content: attr(data-title); }
+.responsive-table-line table, 
+.responsive-table-line thead, 
+.responsive-table-line tbody, 
+.responsive-table-line th, 
+.responsive-table-line td, 
+.responsive-table-line tr { 
+display: block; 
+}
+ 
+.responsive-table-line thead tr { 
+display:none;
+}
+.responsive-table-line td { 
+position: relative;
+border: 1px solid black;
+padding-left: 50% !important; 
+white-space: normal;
+text-align:right; 
+width: 100% !important;
+}
+ 
+.responsive-table-line td:before { 
+position: absolute;
+top: 0px;
+left: 0px;
+width: 45%; 
+padding-right: 15px; 
+height:100%;
+white-space: nowrap;
+text-overflow: ellipsis !important;
+overflow:hidden !important;
+text-align:left;
+background-color:#444c57;
+padding:2px;
+color: white;
+}
+}
+
 .tab-content div:not(.active){
    display: none;
 }

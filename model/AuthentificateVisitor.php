@@ -31,10 +31,12 @@ class AuthentificateVisitor
 
     public function findByEmail(string $email)
     {
-        $response = $this->base->prepare('SELECT * FROM user WHERE email = :email');
-        $response->bindValue(':email', $email);
-        $response->execute();
-        return $response->fetch();
+      $bdd = new Connexion();
+      $bd = $bdd->getBd();
+      $response = $bd->prepare('SELECT * FROM user WHERE email = :email');
+      $response->bindValue(':email', $email);
+      $response->execute();
+      return $response->fetch();
     }
 
 

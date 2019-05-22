@@ -6,7 +6,8 @@ use PDO;
 
 class CommentManager
 {
-      public function getComment($id){
+      public function getComment($id)
+      {
       $bdd = new Connexion();
       $bd = $bdd->getBd();
       $req = $bd->prepare('SELECT id_comment,text,comment.create_date,status, first_name, last_name
@@ -19,30 +20,33 @@ class CommentManager
       return $comments;
    }
 
-   public function addComment($id, $comment){
-      $bdd = new Connexion();
-      $bd = $bdd->getBd();
-      $req = $bd->prepare('INSERT INTO comment');
-      $req->bindParam(":id", $id, PDO::PARAM_INT);
-      $req->bindParam(":comment", $comment, PDO::PARAM_STR);
-      $req->execute(array("id"=> (int)$id,"comment"=>$comment));
-      $post = $req->fetchObject("App\CommentEntity");
-   }
+   // public function addComment($id, $comment)
+   // {
+   //    $bdd = new Connexion();
+   //    $bd = $bdd->getBd();
+   //    $req = $bd->prepare('INSERT INTO comment');
+   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
+   //    $req->bindParam(":comment", $comment, PDO::PARAM_STR);
+   //    $req->execute(array("id"=> (int)$id,"comment"=>$comment));
+   //    $post = $req->fetchObject("App\CommentEntity");
+   // }
 
-   public function validateComment($id){
-      $bdd = new Connexion();
-      $bd = $bdd->getBd();
-      $req = $bd->prepare('UPDATE ');
-      $req->bindParam(":id", $id, PDO::PARAM_INT);
-      $req->execute(array("id"=> (int)$id));
-   }
+   // public function validateComment($id)
+   // {
+   //    $bdd = new Connexion();
+   //    $bd = $bdd->getBd();
+   //    $req = $bd->prepare('UPDATE ');
+   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
+   //    $req->execute(array("id"=> (int)$id));
+   // }
 
-   public function invalidateComment($id){
-      $bdd = new Connexion();
-      $bd = $bdd->getBd();
-      $req = $bd->prepare('UPDATE');
-      $req->bindParam(":id", $id, PDO::PARAM_INT);
-      $req->execute(array("id"=> (int)$id));
-   }
+   // public function invalidateComment($id)
+   // {
+   //    $bdd = new Connexion();
+   //    $bd = $bdd->getBd();
+   //    $req = $bd->prepare('UPDATE');
+   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
+   //    $req->execute(array("id"=> (int)$id));
+   // }
 
 }

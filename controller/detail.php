@@ -2,14 +2,26 @@
 
 require  '../vendor/autoload.php';
 
-$post = new App\PostEntity();
 $postManager = new App\PostManager();
+$userManager = new App\UserManager();
 $commentManager = new App\CommentManager();
 $post = $postManager->getPost($_GET['post']);
 $comment = $commentManager->getComment($_GET['post']);
+$user = $userManager->getUser($_GET['post']);
 
-echo "<pre>";
-var_dump($post);
-echo "</pre>";
 
-echo $twig->render('detail.html.twig', ['post'=>$post,'comments'=>$comment, "title"=>$post->getTitle(), "count"=>sizeof($comment)]);
+if(isset($_POST["comment"])){
+      echo '<pre>';
+   var_dump($_POST["comment"]);
+   echo '</pre>';
+}
+
+
+echo $twig->render('detail.html.twig', 
+   [
+      'post'=>$post,
+      'comments'=>$comment,
+      'user' => $user,
+      "title"=>$post->getTitle(),
+      "count"=>sizeof($comment)
+   ]);
