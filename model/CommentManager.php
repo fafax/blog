@@ -20,16 +20,17 @@ class CommentManager
       return $comments;
    }
 
-   // public function addComment($id, $comment)
-   // {
-   //    $bdd = new Connexion();
-   //    $bd = $bdd->getBd();
-   //    $req = $bd->prepare('INSERT INTO comment');
-   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
-   //    $req->bindParam(":comment", $comment, PDO::PARAM_STR);
-   //    $req->execute(array("id"=> (int)$id,"comment"=>$comment));
-   //    $post = $req->fetchObject("App\CommentEntity");
-   // }
+   public function addComment($id, $comment, $user_id)
+   {
+      $bdd = new Connexion();
+      $bd = $bdd->getBd();
+      $req = $bd->prepare('INSERT INTO comment (text,create_date,Status_id_status,Post_id_post,User_id_user) values (:comment,DATE(NOW()),3,:id,:userId )');
+      $req->bindParam(":id", $id, PDO::PARAM_INT);
+      $req->bindParam(":userId", $user_id, PDO::PARAM_INT);
+      $req->bindParam(":comment", $comment, PDO::PARAM_STR);
+      $req->execute(array("id"=> (int)$id,"comment"=>$comment,"userId" => $user_id));
+      $comments = $req->fetchObject("App\CommentEntity");
+   }
 
    // public function validateComment($id)
    // {

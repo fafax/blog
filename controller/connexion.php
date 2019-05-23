@@ -8,8 +8,8 @@ $_SESSION['connect'] = false;
 $_SESSION["id"]= 0;
 
 if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-    $user = new App\AuthentificateVisitor();
-   $infoConnexion= $user->checkAuthentification($_POST['identifiant'],$_POST['mdp']);
+    $user = new App\Authentificate();
+   $infoConnexion= $user->checkAuthentification($_POST['identifiant'],$_POST['mdp'],"");
 }
 
 if($infoConnexion){

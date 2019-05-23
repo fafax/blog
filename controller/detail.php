@@ -10,10 +10,8 @@ $comment = $commentManager->getComment($_GET['post']);
 $user = $userManager->getUser($_GET['post']);
 
 
-if(isset($_POST["comment"])){
-      echo '<pre>';
-   var_dump($_POST["comment"]);
-   echo '</pre>';
+if(isset($_POST["comment"]) && isset($_SESSION["id"])){
+   $commentManager->addComment($_GET['post'],$_POST["comment"],$_SESSION["id"]);
 }
 
 
