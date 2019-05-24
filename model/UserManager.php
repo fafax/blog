@@ -17,4 +17,14 @@ class UserManager
    return $user;
 }
 
+
+   public function countUser(){
+   $bdd = new Connexion();
+   $bd = $bdd->getBd();
+   $req = $bd->prepare('SELECT count(id_user) FROM  user');
+   $req->execute();
+   $users = $req->fetchAll(PDO::FETCH_OBJ);
+   return $users;
+}
+
 }

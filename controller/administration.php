@@ -8,9 +8,13 @@ $_SESSION['connect'] = false;
 $_SESSION["id"]= 0;
 
 if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
-    $user = new App\Authentificate();
-   $infoConnexion= $user->checkAuthentification($_POST['identifiant'],$_POST['mdp'],"admin");
+    $admin = new App\Authentificate();
+   $infoConnexion= $admin->checkAuthentification($_POST['identifiant'],$_POST['mdp'],"admin");
 }
+
+$user = new App\UserManager();
+$countUsers = $user->countUser();
+
 
 if($infoConnexion && isset($_SESSION["admin"])){
    $_SESSION['connect'] = true;
@@ -19,7 +23,7 @@ if($infoConnexion && isset($_SESSION["admin"])){
    $_SESSION['connect'] = true;
    header("LOCATION:http://localhost/blog_PHP/public/index.php?post=home");
 }else{
-   echo $twig->render('connexion.html.twig', ["posts" => "Connexion","title"=> "Connexion","idSession"=>$_SESSION["id"]]);
+   echo $twig->render('connexion.html.twig', ["posts" => "Connexion","title"=> "Connexion","idSession"=>$_SESSION["id"],"countUser"=> $countUsers]);
 }
 
 
