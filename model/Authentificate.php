@@ -40,14 +40,14 @@ class Authentificate
    }
 
 
-   public function checkAuthentification(string $email, string $password, string $type)
+   public function checkAuthentification(string $email, string $password)
     {
       if ($result = $this->findByEmail($email)) {
          // if (password_verify($password, $result['password'])) {
                $user = $this->find($result['id_user']);
                if($email == $user->getEmail() && $password == $user->getPassword()){
                   $_SESSION['id'] = $user->getIdUser();
-                  if($type === "admin" && $user->getRoleIdRole()){
+                  if($user->getRoleIdRole()){
                      $_SESSION['admin'] = true;
                   }else{
                      $_SESSION['connect'] = true;
