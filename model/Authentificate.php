@@ -47,9 +47,11 @@ class Authentificate
                $user = $this->find($result['id_user']);
                if($email == $user->getEmail() && $password == $user->getPassword()){
                   $_SESSION['id'] = $user->getIdUser();
-                  if($user->getRoleIdRole()){
+                  if($user->getRoleIdRole() === 4){
                      $_SESSION['admin'] = true;
                   }else{
+
+                      // Sert à pouvoir se connecter
                      $_SESSION['connect'] = true;
                   }
                   return $user;
