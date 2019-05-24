@@ -1,6 +1,7 @@
 <?php
+
 session_destroy();
 
-header("LOCATION:http://localhost/blog_PHP/public/index.php?post=home");
+header('LOCATION:index.php?post=home');
 
 exit();

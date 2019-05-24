@@ -1,16 +1,16 @@
 <?php
+
 session_start();
 
-require_once "../vendor/autoload.php";
+require_once '../vendor/autoload.php';
 
 $loader = new Twig_Loader_Filesystem('../view');
 $twig = new Twig_Environment($loader, ['cache' => false]);
 
+$twig->addGlobal('session', $_SESSION);
 
-$twig->addGlobal("session", $_SESSION);
-
-if(isset($_GET['post'])){
-   switch ($_GET['post']) {
+if (isset($_GET['post'])) {
+    switch ($_GET['post']) {
       case 'home':
          require_once '../controller/home.php';
          break;
@@ -32,8 +32,6 @@ if(isset($_GET['post'])){
       default:
          require_once '../controller/detail.php';
    }
-}else{
-   header('Location: index.php?post=home'); 
+} else {
+    header('Location: index.php?post=home');
 }
-
-
