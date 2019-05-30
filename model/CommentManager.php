@@ -58,21 +58,21 @@ class CommentManager
         return $comments[0];
     }
 
-    // public function validateComment($id)
-   // {
-   //    $bdd = new Connexion();
-   //    $bd = $bdd->getBd();
-   //    $req = $bd->prepare('UPDATE ');
-   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
-   //    $req->execute(array("id"=> (int)$id));
-   // }
+    public function validateComment($id)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('UPDATE comment set Status_id_status = 1 WHERE id_comment = :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+    }
 
-   // public function invalidateComment($id)
-   // {
-   //    $bdd = new Connexion();
-   //    $bd = $bdd->getBd();
-   //    $req = $bd->prepare('UPDATE');
-   //    $req->bindParam(":id", $id, PDO::PARAM_INT);
-   //    $req->execute(array("id"=> (int)$id));
-   // }
+    public function invalidateComment($id)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('UPDATE comment set Status_id_status = 2 WHERE id_comment = :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+    }
 }

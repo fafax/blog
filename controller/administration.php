@@ -30,9 +30,22 @@ if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteU
     $allUsers = $users->getAllUsers();
 }
 
+// Delete post in administration page with id_post and refrech page
 if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deletePost') {
     $post->DeletePost((int) $_GET['id']);
     $allPost = $post->getAllPost();
+}
+
+// invalid comment in administration page with id_post and refrech page
+if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'invalidComment') {
+    $comments->invalidateComment((int) $_GET['id']);
+    $allComments = $comments->getAllComment();
+}
+
+// valide comment in administration page with id_post and refrech page
+if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'valideComment') {
+    $comments->validateComment((int) $_GET['id']);
+    $allComments = $comments->getAllComment();
 }
 
 if (isset($_SESSION['admin'])) {
