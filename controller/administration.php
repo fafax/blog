@@ -13,9 +13,7 @@ $allComments = $comments->getAllComment();
 $post = new App\PostManager();
 $allPost = $post->getAllPost();
 
-/*
-   put the array in the object allPost with all comments of post
-*/
+// Put the array in the object allPost with all comments of post
 foreach ($allPost as  $objPost) {
     $anyComments = array();
     foreach ($allComments as  $arrayComments) {
@@ -26,9 +24,15 @@ foreach ($allPost as  $objPost) {
     }
 }
 
-if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'delete') {
+// Delete user in administration page with id_user and refrech page
+if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteUser') {
     $users->DeleteUsers((int) $_GET['id']);
     $allUsers = $users->getAllUsers();
+}
+
+if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deletePost') {
+    $post->DeletePost((int) $_GET['id']);
+    $allPost = $post->getAllPost();
 }
 
 if (isset($_SESSION['admin'])) {

@@ -17,7 +17,6 @@ class PostManager
         return $data;
     }
 
-
     public function getPost($id)
     {
         $bdd = new Connexion();
@@ -28,5 +27,14 @@ class PostManager
         $post = $req->fetchObject("App\PostEntity");
 
         return $post;
+    }
+
+    public function DeletePost($id)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('DELETE  FROM  post where id_post= :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
     }
 }

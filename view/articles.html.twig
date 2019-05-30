@@ -24,8 +24,8 @@
             <td data-title="titre">{{post.title}}</td>
             <td data-title="N° de commentaires">{{post.comments | length}}</td>
             <td data-title="Action">
-               <button class="btn btn-danger btn-table">Supprimer</button>
-               <button class="btn btn-warning btn-table">Modifier</button>
+               <a href="index.php?post=administration&action=deletePost&id={{post.id_post}}#articles"><button class="btn btn-danger btn-table">Supprimer</button></a> 
+               <a href=""><button class="btn btn-warning btn-table">Modifier</button></a> 
             </td>
          </tr>
       {% endfor %}
