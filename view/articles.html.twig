@@ -16,35 +16,19 @@
          </tr>
       </thead>
       <tbody>
+
+      {% for post in allpost %}
          <tr>
-            <th data-title="#" scope="row">1</th>
-            <td data-title="Date de création">Mark</td>
-            <td data-title="titre">Otto</td>
-            <td data-title="N° de commentaires">@mdo</td>
+            <th data-title="#" scope="row">{{post.id_post}}</th>
+            <td data-title="Date de création">{{post.create_date |date("d-m-Y")}}</td>
+            <td data-title="titre">{{post.title}}</td>
+            <td data-title="N° de commentaires">{{post.comments | length}}</td>
             <td data-title="Action">
                <button class="btn btn-danger btn-table">Supprimer</button>
                <button class="btn btn-warning btn-table">Modifier</button>
             </td>
          </tr>
-         <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>
-               <button class="btn btn-danger btn-table">Supprimer</button>
-               <button class="btn btn-warning btn-table">Modifier</button>
-            </td>
-         <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>
-               <button class="btn btn-danger btn-table">Supprimer</button>
-               <button class="btn btn-warning btn-table">Modifier</button>
-            </td>
-         </tr>
+      {% endfor %}
    
       </tbody>
    </table>

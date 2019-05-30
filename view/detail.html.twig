@@ -21,7 +21,7 @@
    {% for comment in comments %}
       <div class="row comment-post">
          <div>
-            <p class="info-comment">{{comment.first_name}} {{comment.last_name}} {{comment.create_date}}</p>
+            <p class="info-comment">{{comment.first_name}} {{comment.last_name}} {{comment.create_date|date("d-m-Y")}}</p>
             <p>{{comment.text}} </p>
          </div>
       </div>

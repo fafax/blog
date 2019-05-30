@@ -10,12 +10,13 @@ class PostManager
     {
         $bdd = new Connexion();
         $bd = $bdd->getBd();
-        $req = $bd->prepare('SELECT id_post,title,lede,url_image,post.create_date, first_name ,last_name FROM post, user WHERE User_id_user = id_user ORDER BY id_post DESC');
+        $req = $bd->prepare('SELECT id_post,title,lede,url_image ,post.create_date, first_name ,last_name  FROM post, user WHERE User_id_user = id_user ORDER BY id_post DESC');
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_OBJ);
 
         return $data;
     }
+
 
     public function getPost($id)
     {

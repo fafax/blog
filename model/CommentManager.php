@@ -21,6 +21,21 @@ class CommentManager
         return $comments;
     }
 
+    public function getAllComment()
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('SELECT id_comment,comment.text,comment.create_date,status, first_name, last_name,Post_id_post
+                           FROM comment, user ,status
+                           WHERE  comment.Status_id_status = status.id_status AND comment.User_id_user = user.id_user
+                           ORDER BY id_comment DESC');
+
+        $req->execute();
+        $comments = $req->fetchAll(PDO::FETCH_OBJ);
+
+        return $comments;
+    }
+
     public function addComment($id, $comment, $user_id)
     {
         $bdd = new Connexion();
@@ -30,6 +45,17 @@ class CommentManager
         $req->bindParam(':userId', $user_id, PDO::PARAM_INT);
         $req->bindParam(':comment', $comment, PDO::PARAM_STR);
         $req->execute();
+    }
+
+    public function countComments()
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('SELECT count(id_comment) as counter FROM  comment');
+        $req->execute();
+        $comments = $req->fetchAll(PDO::FETCH_OBJ);
+
+        return $comments[0];
     }
 
     // public function validateComment($id)
