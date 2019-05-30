@@ -23,7 +23,7 @@ class UserManager
         $bd = $bdd->getBd();
         $req = $bd->prepare('SELECT id_user,first_name,last_name,url_img,create_date FROM  user WHERE  id_user = :id');
         $req->bindParam(':id', $id, PDO::PARAM_INT);
-        $req->execute(array());
+        $req->execute();
         $user = $req->fetchObject("App\UserEntity");
 
         return $user;
@@ -38,5 +38,14 @@ class UserManager
         $users = $req->fetchAll(PDO::FETCH_OBJ);
 
         return $users[0];
+    }
+
+    public function DeleteUsers($id)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('DELETE  FROM  user where id_user= :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
     }
 }

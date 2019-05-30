@@ -21,26 +21,26 @@
             <div id="sidebar" class="nav-collapse ">
                <ul class="sidebar-menu" id="nav-accordion">
                   <h5 class="centered">{{title}}</h5>
-                  <li class="mt" onclick="dashboard()">
-                     <a class="sub-menu" href="#">
+                  <li class="mt">
+                     <a class="sub-menu" href="index.php?post=administration#dashboard">
                         <i class="fa fa-dashboard"></i>
                         <span>Tableau de bord</span>
                      </a>
                   </li>
-                  <li class="sub-menu" onclick="users()">
-                     <a href="#">
+                  <li class="sub-menu">
+                     <a href="index.php?post=administration#users">
                         <i class="fa fa-desktop"></i>
                         <span>Utilisateurs</span>
                      </a>
                   </li>
-                  <li class="sub-menu" onclick="articles()">
-                     <a href="#">
+                  <li class="sub-menu">
+                     <a href="index.php?post=administration#articles">
                         <i class="fa fa-cogs"></i>
                         <span>Articles</span>
                      </a>
                   </li>
-                  <li class="sub-menu" onclick="comments()">
-                     <a href="#">
+                  <li class="sub-menu">
+                     <a href="index.php?post=administration#comments">
                         <i class="fa fa-cogs"></i>
                         <span>Commentaires</span>
                      </a>
@@ -52,16 +52,16 @@
             </div>
          </aside>
             
-         <div id="page" class="container visible">
+         <div id="pageDashboard" class="container">
             {% include "dashboard.html.twig" %}
          </div>
-         <div id="page2" class="container">
+         <div id="pageUsers" class="container">
             {% include "users.html.twig" %}
          </div>
-         <div id="page3" class="container">
+         <div id="pageArticles" class="container">
             {% include "articles.html.twig" %}
          </div>
-         <div id="page4" class="container">
+         <div id="pageComments" class="container">
             {% include "comments.html.twig" %}
          </div>
       </div>

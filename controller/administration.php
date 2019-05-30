@@ -26,6 +26,11 @@ foreach ($allPost as  $objPost) {
     }
 }
 
+if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'delete') {
+    $users->DeleteUsers((int) $_GET['id']);
+    $allUsers = $users->getAllUsers();
+}
+
 if (isset($_SESSION['admin'])) {
     echo $twig->render('administration.html.twig', [
        'title' => 'Administration',

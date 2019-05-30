@@ -21,7 +21,7 @@
             <td>{{user.last_name}}</td>
             <td>{{user.role}}</td>
             <td>
-               <a href=""><button class="btn btn-danger btn-table">Supprimer</button></a> 
+               <a href="index.php?post=administration&action=delete&id={{user.id_user}}#users"><button class="btn btn-danger btn-table">Supprimer</button></a> 
             </td>
          </tr>
       {% endfor %}
