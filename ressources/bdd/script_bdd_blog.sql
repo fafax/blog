@@ -63,8 +63,8 @@ CREATE TABLE IF NOT EXISTS Post (
   CONSTRAINT fk_Post_User
     FOREIGN KEY (User_id_user)
     REFERENCES User (id_user)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS Comment (
   CONSTRAINT fk_Comment_Post
     FOREIGN KEY (Post_id_post)
     REFERENCES Post (id_post)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT fk_Comment_User
     FOREIGN KEY (User_id_user)
     REFERENCES User (id_user)

@@ -4,17 +4,17 @@ namespace App;
 
 class Authentificate
 {
-    // public function add(User $user)
-    // {
-    //    $bdd = new Connexion();
-    //    $bd = $bdd->getBd();
-    //    $response = $bd->prepare('INSERT INTO user (name, password, email) VALUES(:name, :password, :email)');
-    //    $response->bindValue(':name', $user->getName());
-    //    $response->bindValue(':password', $user->getPassword());
-    //    $response->bindValue(':email', $user->getEmail());
-    //    $response->execute();
-    //    $user->setId($this->base->lastInsertId());
-    // }
+    public function add(User $user)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $response = $bd->prepare('INSERT INTO user (name, password, email) VALUES(:name, :password, :email)');
+        $response->bindValue(':name', $user->getName());
+        $response->bindValue(':password', $user->getPassword());
+        $response->bindValue(':email', $user->getEmail());
+        $response->execute();
+        $user->setId($this->base->lastInsertId());
+    }
 
     public function find(int $id)
     {

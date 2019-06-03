@@ -19,6 +19,7 @@
             <tr>
                <th scope="col">#</th>
                <th scope="col">Date de création</th>
+               <th scope="col">N° de l'article</th>
                <th scope="col">Commentaire</th>
                <th scope="col">Utilisateur</th>
                <th scope="col">Action</th>
@@ -30,6 +31,7 @@
                   {% if  comment.status == "inwait" %}
                      <th scope="row">{{comment.id_comment}}</th>
                      <td>{{comment.create_date |date("d-m-Y")}}</td>
+                     <td>{{comment.Post_id_post}}</td>
                      <td>{{comment.text}}</td>
                      <td>{{comment.last_name}} {{comment.first_name}}</td>
                      <td>
@@ -48,6 +50,7 @@
             <tr>
                <th scope="col">#</th>
                <th scope="col">Date de création</th>
+               <th scope="col">N° de l'article</th>
                <th scope="col">Commentaire</th>
                <th scope="col">Utilisateur</th>
                <th scope="col">Action</th>
@@ -59,6 +62,7 @@
                   {% if  comment.status == "valid" %}
                      <th scope="row">{{comment.id_comment}}</th>
                      <td>{{comment.create_date |date("d-m-Y")}}</td>
+                     <td>{{comment.Post_id_post}}</td>
                      <td>{{comment.text}}</td>
                      <td>{{comment.last_name}} {{comment.first_name}}</td>
                      <td><a href="index.php?post=administration&action=invalidComment&id={{comment.id_comment}}#comments"><button
@@ -75,6 +79,7 @@
                   <tr>
                      <th scope="col">#</th>
                      <th scope="col">Date de création</th>
+                     <th scope="col">N° de l'article</th>
                      <th scope="col">Commentaire</th>
                      <th scope="col">Utilisateur</th>
                      <th scope="col">Action</th>
@@ -86,14 +91,23 @@
                         {% if  comment.status == "invalid" %}
                            <th scope="row">{{comment.id_comment}}</th>
                            <td>{{comment.create_date |date("d-m-Y")}}</td>
+                           <td>{{comment.Post_id_post}}</td>
                            <td>{{comment.text}}</td>
                            <td>{{comment.last_name}} {{comment.first_name}}</td>
-                           <td><a href="index.php?post=administration&action=valideComment&id={{comment.id_comment}}#comments"><button
-                                 class="btn btn-primary btn-table">Valider</button></a></td>
+                           <td>
+                              <a href="index.php?post=administration&action=valideComment&id={{comment.id_comment}}#comments">
+                                 <button class="btn btn-primary btn-table">Valider</button>
+                              </a>
+                              <a href="index.php?post=administration&action=deleteComment&id={{comment.id_comment}}#comments" onclick="return(confirm('Voulez vous supprimer deffinitivement ce commentaire ?'));">
+                                 <button class="btn btn-danger btn-table">Supprimer</button>
+                              </a>
+                           </td>
                         {% endif %}
                      </tr>
                   {% endfor %}
                </tbody>
             </table>
-   </div>
+      </div>
 </div>
+
+

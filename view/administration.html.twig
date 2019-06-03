@@ -66,8 +66,12 @@
          </div>
       </div>
    </div>
-
+   <script src="../public/assets/js/jquery.min.js"></script>
+   <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
    <script src="../public/assets/js/main.js"></script>
    <script src="../public/assets/js/dashboard.js"></script>
+   <script>
+      $("input[type=file]").change(function (e) { $(this).next('.custom-file-label').text(e.target.files[0].name); })
+   </script> 
    </body>
 </html>

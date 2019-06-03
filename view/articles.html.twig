@@ -1,8 +1,47 @@
 <h4 class="title-admin">Liste des articles</h4>
 <span class="fa-stack fa-lg right">
-   <a href=""><i class="fa fa-plus"></i></a>
+    <a data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i></a> 
 </span>
 <br>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter un article</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form class="border border-light" action="#" method="post" enctype="multipart/form-data">
+            
+               <label for="textInput">Votre titre</label>
+               <input type="text" id="textInput" class="form-control mb-4" name="newTitle" placeholder="Votre titre">
+            
+               <label for="textInput">Votre chapeau</label>
+               <input type="text" id="textInput" class="form-control mb-4" name="newLede" placeholder="Votre chapeau">
+            
+               <label for="textarea">Votre texte</label>
+               <textarea id="textarea" class="form-control mb-4" name="newText" placeholder="Votre texte"></textarea>
+            
+               <div class="input-group mb-3">
+                  <div class="custom-file">
+                     <input type="file" class="custom-file-input"name="newImg" id="inputGroupFile02">
+                     <label class="custom-file-label" for="inputGroupFile02">Votre image</label>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Annuler</button>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
 
 <div class="responsive-table-line">
    <table class="table table-hover tab-article">
@@ -33,5 +72,7 @@
       </tbody>
    </table>
 </div>
+
+
 
 

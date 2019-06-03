@@ -75,4 +75,13 @@ class CommentManager
         $req->bindParam(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
+
+    public function deleteComment($id)
+    {
+        $bdd = new Connexion();
+        $bd = $bdd->getBd();
+        $req = $bd->prepare('DELETE  FROM  comment where id_comment= :id');
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+    }
 }

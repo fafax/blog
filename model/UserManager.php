@@ -35,9 +35,9 @@ class UserManager
         $bd = $bdd->getBd();
         $req = $bd->prepare('SELECT count(id_user) as counter FROM  user');
         $req->execute();
-        $users = $req->fetchAll(PDO::FETCH_OBJ);
+        $counter = $req->fetchAll(PDO::FETCH_OBJ);
 
-        return $users[0];
+        return $counter[0]->counter;
     }
 
     public function DeleteUsers($id)
