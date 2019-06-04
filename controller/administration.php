@@ -28,13 +28,13 @@ foreach ($allPost as  $objPost) {
 
 // Delete user in administration page with id_user and refrech page
 if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteUser') {
-    $users->DeleteUsers((int) $_GET['id']);
+    $users->deleteUsers((int) $_GET['id']);
     $allUsers = $users->getAllUsers();
 }
 
 // Delete post in administration page with id_post and refrech page
 if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deletePost') {
-    $post->DeletePost((int) $_GET['id']);
+    $post->deletePost((int) $_GET['id']);
     $allPost = $post->getAllPost();
 }
 

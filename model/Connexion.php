@@ -16,3 +16,4 @@ class Connexion
         return $bd;
     }
 }
+

@@ -161,3 +161,4 @@ class userEntity
         return $this;
     }
 }
+

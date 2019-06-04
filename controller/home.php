@@ -10,3 +10,4 @@ if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
 }
 
 echo $twig->render('home.html.twig', ['posts' => $data, 'title' => 'Articles']);
+
