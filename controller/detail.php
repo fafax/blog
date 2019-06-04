@@ -6,7 +6,7 @@ $postManager = new App\PostManager();
 $userManager = new App\UserManager();
 $commentManager = new App\CommentManager();
 $post = $postManager->getPost($_GET['post']);
-$comment = $commentManager->getComment($_GET['post']);
+$comment = $commentManager->getComment($post->getIdPost());
 $user = $userManager->getUser($post->getUserIdUser());
 
 if (isset($_POST['comment']) && isset($_SESSION['id'])) {
@@ -16,7 +16,7 @@ if (isset($_POST['comment']) && isset($_SESSION['id'])) {
 // echo '<pre>';
 // var_dump($post);
 // var_dump($comment);
-// var_dump($user);
+// var_dump($post->getUserIdUser());
 // echo '</pre>';
 
 echo $twig->render('detail.html.twig',
