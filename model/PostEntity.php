@@ -10,7 +10,7 @@ class PostEntity
     private $text;
     private $url_image;
     private $create_date;
-    private $user_id_user;
+    private $User_id_user;
 
     /**
      * Get the value of id_post.
@@ -125,7 +125,7 @@ class PostEntity
      */
     public function getUserIdUser()
     {
-        return $this->user_id_user;
+        return $this->User_id_user;
     }
 
     /**
@@ -135,7 +135,7 @@ class PostEntity
      */
     public function setUserIdUser($user_id_user)
     {
-        $this->user_id_user = $user_id_user;
+        $this->User_id_user = $user_id_user;
 
         return $this;
     }
