@@ -21,7 +21,7 @@ class PostManager
     {
         $bdd = new Connexion();
         $bd = $bdd->getBd();
-        $req = $bd->prepare('SELECT id_post,title,lede,url_image,create_date, text FROM post WHERE  id_post = :id ');
+        $req = $bd->prepare('SELECT * FROM post WHERE  id_post = :id ');
         $req->bindParam(':id', $id, PDO::PARAM_INT);
         $req->execute();
         $post = $req->fetchObject("App\PostEntity");
