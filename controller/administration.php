@@ -62,12 +62,12 @@ if (isset($_FILES) && !empty($_FILES)) {
     $extension_upload = strtolower(substr(strrchr($_FILES['newImg']['name'], '.'), 1));
     if (in_array($extension_upload, $extensions_valides)) {
         $resultat = move_uploaded_file($_FILES['newImg']['tmp_name'], '../public/assets/ressources/img/'.$_FILES['newImg']['name']);
-        $post->addPost($_POST['newTitle'], $_POST['newLede'], $_POST['newText'], $_FILES['newImg']['name'], $_SESSION['id']);
+        $post->addPost($_POST['newTitle'], $_POST['newLede'], $_POST['newText'], $_FILES['newImg']['name'], (int) $_SESSION['id']);
     }
 }
 
 // echo '<pre>';
-// var_dump($_FILES);
+// var_dump((int) $_SESSION['id']);
 // echo '</pre>';
 
 if (isset($_SESSION['admin'])) {
