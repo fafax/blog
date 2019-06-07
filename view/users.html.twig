@@ -17,8 +17,8 @@
          <tr>
             <th scope="row">{{user.id_user}}</th>
             <td>{{user.create_date |date("d-m-Y")}}</td>
-            <td>{{user.first_name}}</td>
             <td>{{user.last_name}}</td>
+            <td>{{user.first_name}}</td>
             <td>{{user.role}}</td>
             <td>
                <a href="index.php?post=administration&action=deleteUser&id={{user.id_user}}#users"><button class="btn btn-danger btn-table">Supprimer</button></a> 

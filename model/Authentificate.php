@@ -4,25 +4,7 @@ namespace App;
 
 class Authentificate
 {
-    public function test()
-    {
-        return 'hello';
-    }
-
-    public function add($user): void
-    {
-        $bdd = new Connexion();
-        $response = $bdd->getBd()->prepare('INSERT INTO user (first_name,last_name,email,create_date, password,Role_id_role ) VALUES(:firstname,:lastname,:email,:createDate, :password, :role)');
-        $response->bindValue(':firstname', $user->getFirstName());
-        $response->bindValue(':lastname', $user->getLastName());
-        $response->bindValue(':email', $user->getEmail());
-        $response->bindValue(':createDate', $user->getCreateDate());
-        $response->bindValue(':password', $user->getPassword());
-        $response->bindValue(':role', $user->getRoleIdRole());
-        $response->execute();
-    }
-
-    public function find(int $id)
+    public function find(int $id): UserEntity
     {
         $bdd = new Connexion();
         $response = $bdd->getBd()->prepare('SELECT * FROM user WHERE id_user = :id');
@@ -32,7 +14,7 @@ class Authentificate
         return $response->fetchObject('App\userEntity');
     }
 
-    public function findByEmail(string $email)
+    public function findByEmail(string $email): array
     {
         $bdd = new Connexion();
         $response = $bdd->getBd()->prepare('SELECT * FROM user WHERE email = :email');
@@ -42,7 +24,7 @@ class Authentificate
         return $response->fetch();
     }
 
-    public function checkAuthentification(string $email, string $password)
+    public function checkAuthentification(string $email, string $password): bool
     {
         if ($result = $this->findByEmail($email)) {
             // if (password_verify($password, $result['password'])) {

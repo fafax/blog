@@ -15,7 +15,7 @@ class PostEntity
     /**
      * Get the value of id_post.
      */
-    public function getIdPost()
+    public function getIdPost(): int
     {
         return $this->id_post;
     }
@@ -23,121 +23,96 @@ class PostEntity
     /**
      * Get the value of title.
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
      * Set the value of title.
-     *
-     * @return self
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
-
-        return $this;
     }
 
     /**
      * Get the value of lede.
      */
-    public function getLede()
+    public function getLede(): string
     {
         return $this->lede;
     }
 
     /**
      * Set the value of lede.
-     *
-     * @return self
      */
-    public function setLede($lede)
+    public function setLede(string $lede): void
     {
         $this->lede = $lede;
-
-        return $this;
     }
 
     /**
      * Get the value of text.
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->text;
     }
 
     /**
      * Set the value of text.
-     *
-     * @return self
      */
-    public function setText($text)
+    public function setText(string $text): void
     {
         $this->text = $text;
-
-        return $this;
     }
 
     /**
      * Get the value of url_image.
      */
-    public function getUrlImage()
+    public function getUrlImage(): ?string
     {
         return $this->url_image;
     }
 
     /**
      * Set the value of url_image.
-     *
-     * @return self
      */
-    public function setUrlImage($url_image)
+    public function setUrlImage(string $url_image): void
     {
         $this->url_image = $url_image;
-
-        return $this;
     }
 
     /**
      * Get the value of create_date.
      */
-    public function getCreateDate()
+    public function getCreateDate(): string
     {
         return $this->create_date;
     }
 
     /**
      * Set the value of create_date.
-     *
-     * @return self
      */
-    public function setCreateDate($create_date)
+    public function setCreateDate(string $create_date): void
     {
         $this->create_date = $create_date;
-
-        return $this;
     }
 
     /**
      * Get the value of user_id_user.
      */
-    public function getUserIdUser()
+    public function getUserIdUser(): int
     {
         return $this->User_id_user;
     }
 
     /**
      * Set the value of user_id_user.
-     *
-     * @return self
      */
-    public function setUserIdUser($user_id_user)
+    public function setUserIdUser(int $user_id_user): void
     {
         $this->User_id_user = $user_id_user;
-
-        return $this;
     }
 }
-

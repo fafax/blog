@@ -13,12 +13,6 @@ if (isset($_POST['comment']) && isset($_SESSION['id'])) {
     $commentManager->addComment($_GET['post'], $_POST['comment'], $_SESSION['id']);
 }
 
-// echo '<pre>';
-// var_dump($post);
-// var_dump($comment);
-// var_dump($post->getUserIdUser());
-// echo '</pre>';
-
 echo $twig->render('detail.html.twig',
    [
       'post' => $post,
@@ -27,6 +21,3 @@ echo $twig->render('detail.html.twig',
       'title' => $post->getTitle(),
       'count' => sizeof($comment),
    ]);
-
-
-   

@@ -6,7 +6,7 @@ use PDO;
 
 class CommentManager
 {
-    public function getComment(int $id)
+    public function getComment(int $id): array
     {
         $bdd = new Connexion();
         $req = $bdd->getBd()->prepare('SELECT id_comment,text,comment.create_date,status, first_name, last_name
@@ -20,7 +20,7 @@ class CommentManager
         return $comments;
     }
 
-    public function getAllComment()
+    public function getAllComment(): array
     {
         $bdd = new Connexion();
         $req = $bdd->getBd()->prepare('SELECT id_comment,comment.text,comment.create_date,status, first_name, last_name,Post_id_post
