@@ -1,16 +1,16 @@
 <h4 class="title-admin">Liste des articles</h4>
 <span class="fa-stack fa-lg right">
-    <a data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i></a> 
+    <a data-toggle="modal" data-target="#createPostModal"><i class="fa fa-plus"></i></a> 
 </span>
 <br>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="createPostModal" tabindex="-1" role="dialog" aria-labelledby="titleModal"
    aria-hidden="true">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ajouter un article</h5>
+            <h5 class="modal-title" id="titleModal">Ajouter un article</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
             </button>
@@ -19,17 +19,17 @@
             <form class="border border-light" action="#" method="post" enctype="multipart/form-data">
             
                <label for="textInput">Votre titre</label>
-               <input type="text" id="textInput" class="form-control mb-4" name="newTitle" placeholder="Votre titre">
+               <input type="text"  class="form-control mb-4" name="newTitle" placeholder="Votre titre" required>
             
                <label for="textInput">Votre chapeau</label>
-               <input type="text" id="textInput" class="form-control mb-4" name="newLede" placeholder="Votre chapeau">
+               <input type="text"  class="form-control mb-4" name="newLede" placeholder="Votre chapeau" required>
             
                <label for="textarea">Votre texte</label>
-               <textarea id="textarea" class="form-control mb-4" name="newText" placeholder="Votre texte"></textarea>
+               <textarea id="textarea" class="form-control mb-4" name="newText" placeholder="Votre texte" required></textarea>
             
                <div class="input-group mb-3">
                   <div class="custom-file">
-                     <input type="file" class="custom-file-input"name="newImg" id="inputGroupFile02">
+                     <input type="file" class="custom-file-input"name="newImg" required>
                      <label class="custom-file-label" for="inputGroupFile02">Votre image</label>
                   </div>
                </div>

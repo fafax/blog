@@ -13,7 +13,7 @@ class CommentEntity
     /**
      * Get the value of id_comment.
      */
-    public function getId_comment():
+    public function getId_comment()
     {
         return $this->id_comment;
     }
@@ -29,7 +29,7 @@ class CommentEntity
     /**
      * Set the value of text.
      *
-     * @return  self
+     * @return self
      */
     public function setText($text)
     {
@@ -49,7 +49,7 @@ class CommentEntity
     /**
      * Set the value of status_id_status.
      *
-     * @return  self
+     * @return self
      */
     public function setStatusIdStatus($status_id_status)
     {
@@ -69,7 +69,7 @@ class CommentEntity
     /**
      * Set the value of post_id_post.
      *
-     * @return  self
+     * @return self
      */
     public function setPostIdPost($post_id_post)
     {
@@ -89,7 +89,7 @@ class CommentEntity
     /**
      * Set the value of user_id_user.
      *
-     * @return  self
+     * @return self
      */
     public function setUserIdUser($user_id_user)
     {
@@ -98,4 +98,3 @@ class CommentEntity
         return $this;
     }
 }
-

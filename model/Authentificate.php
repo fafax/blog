@@ -4,13 +4,21 @@ namespace App;
 
 class Authentificate
 {
-    public function add(User $user): void
+    public function test()
+    {
+        return 'hello';
+    }
+
+    public function add($user): void
     {
         $bdd = new Connexion();
-        $response = $bdd->getBd()->prepare('INSERT INTO user (name, password, email) VALUES(:name, :password, :email)');
-        $response->bindValue(':name', $user->getName());
-        $response->bindValue(':password', $user->getPassword());
+        $response = $bdd->getBd()->prepare('INSERT INTO user (first_name,last_name,email,create_date, password,Role_id_role ) VALUES(:firstname,:lastname,:email,:createDate, :password, :role)');
+        $response->bindValue(':firstname', $user->getFirstName());
+        $response->bindValue(':lastname', $user->getLastName());
         $response->bindValue(':email', $user->getEmail());
+        $response->bindValue(':createDate', $user->getCreateDate());
+        $response->bindValue(':password', $user->getPassword());
+        $response->bindValue(':role', $user->getRoleIdRole());
         $response->execute();
     }
 

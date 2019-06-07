@@ -11,10 +11,10 @@ INSERT INTO Role (role) VALUES
 -- ajout data pour la table user
 -- ------------------------------------------------------------------------------
 INSERT INTO User (first_name, last_name, email, url_img, create_date, password, Role_id_role) VALUES
-   ("HAMAYON", "Fabien", "fabienhamayon@free.fr", " ", "2019-04-04", "test", 1 ),
-   ("TUDO", "Alex", "tudoalex@free.fr", " ", "2019-04-05", " ", 2),
-   ("LASNE", "Steven", "lasnesteven@free.fr", " ", "2019-04-06", "test2", 2),
-   ("DUPONT", "Lise", "dupontlise@free.fr", " ", "2019-04-07", " ", 2);
+   ( "Fabien","HAMAYON", "fabienhamayon@free.fr", " ", "2019-04-04", "test", 1 ),
+   ( "Alex","TUDO", "tudoalex@free.fr", " ", "2019-04-05", " ", 2),
+   ( "Steven","LASNE", "lasnesteven@free.fr", " ", "2019-04-06", "test2", 2),
+   ( "Lise","DUPONT", "dupontlise@free.fr", " ", "2019-04-07", " ", 2);
 
 -- ------------------------------------------------------------------------------
 -- ajout data pour la table post

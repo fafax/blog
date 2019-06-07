@@ -13,6 +13,16 @@ class userEntity
     private $password;
     private $Role_id_role;
 
+    public function __construct($lastname, $firstname, $mail, $pwd, $role = 2)
+    {
+        $this->setLastName($lastname);
+        $this->setFirstName($firstname);
+        $this->setEmail($mail);
+        $this->setPassword($pwd);
+        $this->setRoleIdRole($role);
+        $this->setCreateDate(date('Y-m-d'));
+    }
+
     /**
      * Get the value of id_user.
      */
@@ -32,7 +42,7 @@ class userEntity
     /**
      * Set the value of first_name.
      *
-     * @return  self
+     * @return self
      */
     public function setFirstName($first_name)
     {
@@ -52,7 +62,7 @@ class userEntity
     /**
      * Set the value of email.
      *
-     * @return  self
+     * @return self
      */
     public function setEmail($email)
     {
@@ -72,7 +82,7 @@ class userEntity
     /**
      * Set the value of url_img.
      *
-     * @return  self
+     * @return self
      */
     public function setUrlImg($url_img)
     {
@@ -92,7 +102,7 @@ class userEntity
     /**
      * Set the value of create_date.
      *
-     * @return  self
+     * @return self
      */
     public function setCreateDate($create_date)
     {
@@ -112,7 +122,7 @@ class userEntity
     /**
      * Set the value of password.
      *
-     * @return  self
+     * @return self
      */
     public function setPassword($password)
     {
@@ -132,7 +142,7 @@ class userEntity
     /**
      * Set the value of Role_id_role.
      *
-     * @return  self
+     * @return self
      */
     public function setRoleIdRole($Role_id_role)
     {
@@ -152,7 +162,7 @@ class userEntity
     /**
      * Set the value of last_name.
      *
-     * @return  self
+     * @return self
      */
     public function setLastName($last_name)
     {
@@ -161,4 +171,3 @@ class userEntity
         return $this;
     }
 }
-

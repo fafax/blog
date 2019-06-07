@@ -309,3 +309,10 @@ header.masthead{
    width: 40vw !important;
 }
 
+.contact-clean form .textLink a{
+   color: #00657b !important;
+}
+
+.contact-clean form .textLink a:hover{
+   text-decoration: underline !important;
+}

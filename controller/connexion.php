@@ -16,6 +16,14 @@ if ($infoConnexion) {
     $connexion = true;
 }
 
+if (isset($_POST['newlastname']) && isset($_POST['newFirstname']) && isset($_POST['newEmail']) && isset($_POST['newPwd']) && isset($_POST['newPwd2'])) {
+    if ($_POST['newPwd'] === $_POST['newPwd2']) {
+        $newUser = new App\userEntity($_POST['newlastname'], $_POST['newFirstname'], $_POST['newEmail'], $_POST['newPwd']);
+        $user = new App\Authentificate();
+        $user->add($newUser);
+    }
+}
+
 if ($connexion) {
     header('LOCATION:index.php?post=home');
 } else {

@@ -1,11 +1,11 @@
 {% include 'header.php' %}
 
- <div class="contact-clean">
-    {% if idSession %}
-      <div class="container-Error">
-         <p class="error">Erreur d'authentification veuillez réessayer</p>
-      </div>
-    {% endif %}
+<div class="contact-clean">
+   {% if idSession %}
+   <div class="container-Error">
+      <p class="error">Erreur d'authentification veuillez réessayer</p>
+   </div>
+   {% endif %}
    <form action="#" method="POST">
       <h2 class="text-center">Identification</h2>
       <div class="form-group">
@@ -15,12 +15,53 @@
          <input class="form-control" type="password" name="mdp" placeholder="Mot de passe">
          {# <small class="form-text text-danger">Please enter a correct email address.</small> #}
       </div>
-   
+
       <div class="form-group btn-center">
          <button class="btn btn-primary" type="submit">Connexion</button>
       </div>
+      <div class="text-center textLink">
+         <a data-toggle="modal" data-target="#createUserModal">Créer un compte utilisateur</a>
+      </div>
    </form>
 </div>
- 
-{% include 'footer.php' %}
 
+<div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="titleModal"
+   aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="titleModal">Création compte utilisateur</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form class="border border-light" action="#" method="post" enctype="multipart/form-data">
+
+               <label for="textInput">Votre Nom</label>
+               <input type="text" class="form-control mb-4" name="newlastname" placeholder="Votre Nom" required>
+
+               <label for="textInput">Votre Prénom</label>
+               <input type="text" class="form-control mb-4" name="newFirstname" placeholder="Votre Prénom" required>
+
+               <label for="textInput">Votre Email</label>
+               <input type="email" class="form-control mb-4" name="newEmail" placeholder="Votre Email" required>
+
+               <label for="textInput">Votre mot de passe</label>
+               <input type="password" class="form-control mb-4" name="newPwd" placeholder="Votre mot de passe" required>
+               <label for="textInput">Confirmer votre mot de passe</label>
+               <input type="password" class="form-control mb-4" name="newPwd2"
+                  placeholder="Confirmer votre mot de passe" required>
+
+
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Annuler</button>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% include 'footer.php' %}
