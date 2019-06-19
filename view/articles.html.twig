@@ -26,7 +26,7 @@
             
                <label for="textarea">Votre texte</label>
                <textarea id="textarea" class="form-control mb-4" name="newText" placeholder="Votre texte" required></textarea>
-            
+
                <div class="input-group mb-3">
                   <div class="custom-file">
                      <input type="file" class="custom-file-input"name="newImg" required>
@@ -42,6 +42,51 @@
       </div>
    </div>
 </div>
+
+<div class="modal fade" id="UpdatePostModal" tabindex="-1" role="dialog" aria-labelledby="titleModal"
+   aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="titleModal">Modifier un article</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form class="border border-light" action="#" method="post" enctype="multipart/form-data">
+
+               <input type="hidden" id="updateId" name="updateId">
+
+               <label for="textInput">Votre titre</label>
+               <input type="text" class="form-control mb-4" id="updateTitle" name="updateTitle" required>
+
+               <label for="textInput">Votre chapeau</label>
+               <input type="text" class="form-control mb-4" id="updateLede" name="updateLede" required>
+
+               <label for="textarea">Votre texte</label>
+               <textarea id="textarea" class="form-control mb-4" id="updateText" name="updateText" required> </textarea>
+
+               <label for="fileImg">Votre image</label>
+               <p id="fileImg" style="margin: 0px 0px 20px 0px"></p>
+
+               <div class="input-group mb-3">
+                  <div class="custom-file">
+                     <input type="file" class="custom-file-input" id="updateImg" name="updateImg">
+                     <label class="custom-file-label" for="inputGroupFile02">Votre nouvelle image</label>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Annuler</button>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+
 
 <div class="responsive-table-line">
    <table class="table table-hover tab-article">
@@ -64,7 +109,17 @@
             <td data-title="N° de commentaires">{{post.comments | length}}</td>
             <td data-title="Action">
                <a href="index.php?post=administration&action=deletePost&id={{post.id_post}}#articles"><button class="btn btn-danger btn-table">Supprimer</button></a> 
-               <a href=""><button class="btn btn-warning btn-table">Modifier</button></a> 
+               <a id="cl"
+                  data-toggle="modal"
+                  data-id="{{post.id_post}}"
+                  data-title="{{post.title}}"
+                  data-lede="{{post.lede}}"
+                  data-text="{{post.text}}"
+                  data-img="{{post.url_image}}"
+                  data-target="#UpdatePostModal"
+               >
+                  <button class="btn btn-warning btn-table">Modifier</button>
+               </a> 
             </td>
          </tr>
       {% endfor %}

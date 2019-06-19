@@ -11,7 +11,7 @@ class Authentificate
         $response->bindValue(':id', $id);
         $response->execute();
 
-        return $response->fetchObject('App\userEntity');
+        return $response->fetchObject('App\UserEntity');
     }
 
     public function findByEmail(string $email): array
@@ -27,11 +27,10 @@ class Authentificate
     public function checkAuthentification(string $email, string $password): bool
     {
         if ($result = $this->findByEmail($email)) {
-            // if (password_verify($password, $result['password'])) {
             $user = $this->find($result['id_user']);
-            if ($email == $user->getEmail() && $password === $user->getPassword()) {
+            if (password_verify($password, $result['password']) && $email == $user->getEmail()) {
                 $_SESSION['id'] = $user->getIdUser();
-                if ($user->getRoleIdRole() === '1') {
+                if ($user->getRoleIdRole() === 1) {
                     // if id and mdp and (id_role is egale adiminstrator) is correct then connect session and show link administration
                     $_SESSION['admin'] = true;
                 }
@@ -40,8 +39,6 @@ class Authentificate
 
                 return true;
             }
-            // }
-         // return false;
         }
         $_SESSION['id'] = 'noConnect';
 

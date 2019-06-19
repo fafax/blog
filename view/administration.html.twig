@@ -72,6 +72,19 @@
    <script src="../public/assets/js/dashboard.js"></script>
    <script>
       $("input[type=file]").change(function (e) { $(this).next('.custom-file-label').text(e.target.files[0].name); })
+      $(document).on("click", "#cl", function () {
+            const postId = $(this).data('id');
+            const postTitle= $(this).data('title');
+            const postLede = $(this).data('lede');
+            const postText = $(this).data('text');
+            const postImg = $(this).data('img');
+            console.log(postTitle, postLede, postText, postImg);
+            $(".modal-body #updateId").val(postId);
+            $(".modal-body #updateTitle").val(postTitle);
+            $(".modal-body #updateLede").val(postLede);
+            $(".modal-body #updateText").html(postText);
+            $(".modal-body #fileImg").html(postImg);
+         });
    </script> 
    </body>
 </html>

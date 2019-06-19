@@ -15,6 +15,9 @@ $countPost = $post->countpost();
 
 $confimDelete = false;
 
+$reponse = null;
+$extensions_valides = array('jpg', 'jpeg', 'png');
+
 // Put the array in the object allPost with all comments of post
 foreach ($allPost as  $objPost) {
     $anyComments = array();
@@ -38,6 +41,31 @@ if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteP
     $allPost = $post->getAllPost();
 }
 
+// Update system post if change image
+if (isset($_FILES['updateImg']) && !empty($_FILES['updateImg']['name'])) {
+    $extension_upload = strtolower(substr(strrchr($_FILES['updateImg']['name'], '.'), 1));
+    if (in_array($extension_upload, $extensions_valides)) {
+        $resultat = move_uploaded_file($_FILES['updateImg']['tmp_name'], '../public/assets/ressources/img/'.$_FILES['updateImg']['name']);
+
+        $updatePost = $post->getPost((int) $_POST['updateId']);
+        $updatePost->setTitle($_POST['updateTitle']);
+        $updatePost->setLede($_POST['updateLede']);
+        $updatePost->setText($_POST['updateText']);
+        $updatePost->setUrlImage($_FILES['updateImg']['name']);
+        $post->updatePost($updatePost);
+        $allPost = $post->getAllPost();
+    }
+}
+// Update system post if don't change image
+if ((isset($_POST['updateTitle']) || isset($_POST['updateLede']) || isset($_POST['updateText'])) && strlen($_FILES['updateImg']['name']) === 0) {
+    $updatePost = $post->getPost((int) $_POST['updateId']);
+    $updatePost->setTitle($_POST['updateTitle']);
+    $updatePost->setLede($_POST['updateLede']);
+    $updatePost->setText($_POST['updateText']);
+    $post->updatePost($updatePost);
+    $allPost = $post->getAllPost();
+}
+
 // invalid comment in administration page with id_post and refrech page
 if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'invalidComment') {
     $comments->invalidateComment((int) $_GET['id']);
@@ -55,10 +83,7 @@ if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteC
     $allComments = $comments->getAllComment();
 }
 
-$reponse = null;
-$extensions_valides = array('jpg', 'jpeg', 'png');
-
-if (isset($_FILES) && !empty($_FILES)) {
+if (isset($_FILES['newImg']) && !empty($_FILES['newImg'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['newImg']['name'], '.'), 1));
     if (in_array($extension_upload, $extensions_valides)) {
         $resultat = move_uploaded_file($_FILES['newImg']['tmp_name'], '../public/assets/ressources/img/'.$_FILES['newImg']['name']);

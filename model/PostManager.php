@@ -9,7 +9,7 @@ class PostManager
     public function getAllPost(): array
     {
         $bdd = new Connexion();
-        $req = $bdd->getBd()->prepare('SELECT id_post,title,lede,url_image ,post.create_date, first_name ,last_name  FROM post, user WHERE User_id_user = id_user ORDER BY id_post DESC');
+        $req = $bdd->getBd()->prepare('SELECT id_post,title,lede,url_image,text ,post.create_date, first_name ,last_name  FROM post, user WHERE User_id_user = id_user ORDER BY id_post DESC');
         $req->execute();
         $data = $req->fetchAll(PDO::FETCH_OBJ);
 
@@ -55,6 +55,18 @@ class PostManager
         $req->bindValue(':img', $post->getUrlImage(), PDO::PARAM_STR);
         $req->bindValue(':createDate', $post->getCreateDate(), PDO::PARAM_STR);
         $req->bindValue(':id', $post->getUserIdUser(), PDO::PARAM_INT);
+        $req->execute();
+    }
+
+    public function updatePost(PostEntity $post): void
+    {
+        $bdd = new Connexion();
+        $req = $bdd->getBd()->prepare('UPDATE post set title = :title, lede =:lede, text = :text, url_image = :img where id_post= :id');
+        $req->bindValue(':title', $post->getTitle(), PDO::PARAM_STR);
+        $req->bindValue(':lede', $post->getLede(), PDO::PARAM_STR);
+        $req->bindValue(':text', $post->getText(), PDO::PARAM_STR);
+        $req->bindValue(':img', $post->getUrlImage(), PDO::PARAM_STR);
+        $req->bindValue(':id', $post->getIdPost(), PDO::PARAM_INT);
         $req->execute();
     }
 }

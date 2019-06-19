@@ -2,7 +2,7 @@
 
 namespace App;
 
-class userEntity
+class UserEntity
 {
     private $id_user;
     private $first_name;
