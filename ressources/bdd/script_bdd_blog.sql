@@ -11,9 +11,9 @@
 -- Schema mydb
 -- -----------------------------------------------------
 CREATE DATABASE
-IF NOT EXISTS dbs97932 DEFAULT CHARACTER
+IF NOT EXISTS Blog_php DEFAULT CHARACTER
 SET utf8 ;
-USE dbs97932;
+USE Blog_php;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Role`

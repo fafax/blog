@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Mon Blog PHP</title>
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="../public/assets/css/dashboard.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>
 
 <body>
    <div class="container-fluid">
       <header>
-         <img src="../public/assets/ressources/img/php.png" class="img-circle" width="80">
-         <a class="btn btn-warning" href="http://localhost/blog_PHP/public/index.php?post=deconnexion" >Déconnexion</a>
+         <img src="./assets/ressources/img/php.png" class="img-circle" width="80">
+         <a class="btn btn-warning" href="index.php?post=deconnexion" >Déconnexion</a>
       </header>
       <div class="row">
          <aside>
@@ -66,10 +66,10 @@
          </div>
       </div>
    </div>
-   <script src="../public/assets/js/jquery.min.js"></script>
-   <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
-   <script src="../public/assets/js/main.js"></script>
-   <script src="../public/assets/js/dashboard.js"></script>
+   <script src="./assets/js/jquery.min.js"></script>
+   <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+   <script src="./assets/js/main.js"></script>
+   <script src="./assets/js/dashboard.js"></script>
    <script>
       $("input[type=file]").change(function (e) { $(this).next('.custom-file-label').text(e.target.files[0].name); })
       $(document).on("click", "#cl", function () {
@@ -82,7 +82,7 @@
             $(".modal-body #updateId").val(postId);
             $(".modal-body #updateTitle").val(postTitle);
             $(".modal-body #updateLede").val(postLede);
-            $(".modal-body #updateText").html(postText);
+            $(".modal-body #updateText").val(postText);
             $(".modal-body #fileImg").html(postImg);
          });
    </script> 

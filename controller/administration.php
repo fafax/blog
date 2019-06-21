@@ -45,7 +45,7 @@ if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteP
 if (isset($_FILES['updateImg']) && !empty($_FILES['updateImg']['name'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['updateImg']['name'], '.'), 1));
     if (in_array($extension_upload, $extensions_valides)) {
-        $resultat = move_uploaded_file($_FILES['updateImg']['tmp_name'], '../public/assets/ressources/img/'.$_FILES['updateImg']['name']);
+        $resultat = move_uploaded_file($_FILES['updateImg']['tmp_name'], './assets/ressources/img/'.$_FILES['updateImg']['name']);
 
         $updatePost = $post->getPost((int) $_POST['updateId']);
         $updatePost->setTitle($_POST['updateTitle']);
@@ -86,7 +86,7 @@ if (isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] === 'deleteC
 if (isset($_FILES['newImg']) && !empty($_FILES['newImg'])) {
     $extension_upload = strtolower(substr(strrchr($_FILES['newImg']['name'], '.'), 1));
     if (in_array($extension_upload, $extensions_valides)) {
-        $resultat = move_uploaded_file($_FILES['newImg']['tmp_name'], '../public/assets/ressources/img/'.$_FILES['newImg']['name']);
+        $resultat = move_uploaded_file($_FILES['newImg']['tmp_name'], './assets/ressources/img/'.$_FILES['newImg']['name']);
         $newPost = new App\PostEntity();
         $newPost->setTitle($_POST['newTitle']);
         $newPost->setLede($_POST['newLede']);

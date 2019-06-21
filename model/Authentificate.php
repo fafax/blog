@@ -7,7 +7,7 @@ class Authentificate
     public function find(int $id): UserEntity
     {
         $bdd = new Connexion();
-        $response = $bdd->getBd()->prepare('SELECT * FROM user WHERE id_user = :id');
+        $response = $bdd->getBd()->prepare('SELECT * FROM User WHERE id_user = :id');
         $response->bindValue(':id', $id);
         $response->execute();
 
@@ -17,7 +17,7 @@ class Authentificate
     public function findByEmail(string $email): array
     {
         $bdd = new Connexion();
-        $response = $bdd->getBd()->prepare('SELECT * FROM user WHERE email = :email');
+        $response = $bdd->getBd()->prepare('SELECT * FROM User WHERE email = :email');
         $response->bindValue(':email', $email);
         $response->execute();
 

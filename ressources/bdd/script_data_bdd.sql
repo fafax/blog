@@ -1,4 +1,4 @@
-use dbs97932;
+use Blog_php;
 
 -- ------------------------------------------------------------------------------
 -- ajout data pour la table role
@@ -15,10 +15,9 @@ VALUES
 INSERT INTO User
    (first_name, last_name, email, url_img, create_date, password, Role_id_role)
 VALUES
-   ( "Fabien", "HAMAYON", "fabienhamayon@free.fr", " ", "2019-04-04", "$2y$10$3NtvvTdPoHlxVcAxx4KcT
-.gSwbFPEERq6.NyY/Y4L7Z058778osP2", 1 ),
+   ( "Fabien", "HAMAYON", "admin@admin.fr", " ", "2019-04-04", "$2y$10$3NtvvTdPoHlxVcAxx4KcT.gSwbFPEERq6.NyY/Y4L7Z058778osP2", 1 ),
    ( "Alex", "TUDO", "tudoalex@free.fr", " ", "2019-04-05", " ", 2),
-   ( "Steven", "LASNE", "lasnesteven@free.fr", " ", "2019-04-06", "$2y$10$K6tD28EBgQOUYWyzrdizBuPEZa2AlCrMFLveYt446TnC77H6c1MnO", 2),
+   ( "Steven", "LASNE", "user@user.fr", " ", "2019-04-06", "$2y$10$K6tD28EBgQOUYWyzrdizBuPEZa2AlCrMFLveYt446TnC77H6c1MnO", 2),
    ( "Lise", "DUPONT", "dupontlise@free.fr", " ", "2019-04-07", " ", 2);
 
 -- ------------------------------------------------------------------------------
