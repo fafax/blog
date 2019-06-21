@@ -162,4 +162,31 @@ DELETE NO ACTION
 UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- ------------------------------------------------------------------------------
+-- ajout data pour la table role
+-- ------------------------------------------------------------------------------
 
+INSERT INTO Role
+   (role)
+VALUES
+   ("adiminstrator"),
+   ("anthentificateUser");
+
+-- ------------------------------------------------------------------------------
+-- ajout data pour la table Status
+-- ------------------------------------------------------------------------------
+INSERT INTO Status
+   (status)
+VALUES
+   ("valid"),
+   ("invalid"),
+   ("inwait");
+
+-- ------------------------------------------------------------------------------
+-- ajout data pour la table user admin
+-- ------------------------------------------------------------------------------
+
+INSERT INTO User
+   (first_name, last_name, email, url_img, create_date, password, Role_id_role)
+VALUES
+   ( "Fabien", "HAMAYON", "admin@admin.fr", " ", "2019-04-04", "$2y$10$3NtvvTdPoHlxVcAxx4KcT.gSwbFPEERq6.NyY/Y4L7Z058778osP2", 1 );

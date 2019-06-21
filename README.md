@@ -34,28 +34,34 @@ $ cd blog
 $ composer install
 ```
 
-## setting
-
-renames the env.example.php file to env.php by putting your data
-
-## Running the app
-
-```bash
-# development
-$ php -S localhost:80
-```
-
-in your internet browser between the url localhost/public
-
 ## Database
 
 [MySQL](https://www.mysql.com/fr/) was used as the project database
 
 execute the contents of the ressources\bdd\script_bdd_blog.sql as sql requests
 
+Here is a data script to do your test ressources\bdd\script_data_bdd.sql
+
+
+## setting
+
+rename the env.example.php file to env.php by putting your data
+
+
+## Running the app
+
+```bash
+# development
+$ cd public
+$ php -S localhost:8080
+```
+in your internet browser between the url localhost:8080
+
+To access the administrator function log in with id: admin@admin.fr password: test
+
 ## Support
 
-[Blog PHP](http://p5.codeassemblydev.fr/index.php?post=home) is an open source project.
+To test the block you can test here :[Blog PHP](http://p5.codeassemblydev.fr/index.php?post=home) is an open source project.
 
 ## Stay in touch
 

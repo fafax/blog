@@ -1,13 +1,5 @@
 use Blog_php;
 
--- ------------------------------------------------------------------------------
--- ajout data pour la table role
--- ------------------------------------------------------------------------------
-INSERT INTO Role
-   (role)
-VALUES
-   ("adiminstrator"),
-   ("anthentificateUser");
 
 -- ------------------------------------------------------------------------------
 -- ajout data pour la table user
@@ -31,15 +23,6 @@ VALUES
    ("Mon troisième article", "Je suis le chapo du troisième article", "Texte du troisième article", "inventaire d'objet.png ", "2019-04-17", 1),
    ("Mon article test", "Je suis le chapo de l'article test", "Texte de l'article test", "inventaire d'objet.png ", "2019-04-17", 1);
 
--- ------------------------------------------------------------------------------
--- ajout data pour la table Status
--- ------------------------------------------------------------------------------
-INSERT INTO Status
-   (status)
-VALUES
-   ("valid"),
-   ("invalid"),
-   ("inwait");
 
 -- ------------------------------------------------------------------------------
 -- ajout data pour la table Comment
