@@ -5,20 +5,28 @@
                     <ul class="list-inline text-center">
                         <li class="list-inline-item">
                            <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x"></i>
-                              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                              <a href="https://www.linkedin.com/in/fabien-hamayon-2b072698/" target="_blank">
+                                 <i class="fa fa-circle fa-stack-2x"></i>
+                                 <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                              </a>
+                              
                            </span>
                         </li>
                         <li class="list-inline-item">
                            <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x"></i>
-                              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                              <a href="https://www.youtube.com/channel/UCBB2pQPkS2jmI3LPhUCxYgA" target="_blank">
+                                 <i class="fa fa-circle fa-stack-2x"></i>
+                                 <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                              </a>
+                              
                            </span>
                         </li>
                         <li class="list-inline-item">
                            <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x"></i>
-                              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                              <a href="https://github.com/fafax" target="_blank">
+                                 <i class="fa fa-circle fa-stack-2x"></i>
+                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                              </a>
                            </span>
                         </li>
                     </ul>
@@ -32,10 +40,11 @@
             </div>
         </div>
     </footer>
-    <script src="../public/assets/js/jquery.min.js"></script>
-    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../public/assets/js/clean-blog.js"></script>
-    <script src="../public/assets/js/main.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/clean-blog.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
+

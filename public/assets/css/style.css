@@ -179,7 +179,7 @@ header.masthead{
 }
 
 .contact-clean form .btn-primary {
-  background-color: #055ada !important;
+  background-color: #0085a1;
   margin-top: 15px;
   color: #fff;
 }
@@ -253,6 +253,7 @@ header.masthead{
 
 .highlight-phone .intro .btn:hover {
   opacity: 1;
+  color: #fff!important;
 }
 
 .highlight-phone .intro .btn:active {
@@ -260,7 +261,7 @@ header.masthead{
 }
 
 .highlight-phone .intro .btn-primary {
-  background-color: #055ada;
+  background-color: #0085a1;
   color: #fff;
 }
 
@@ -307,4 +308,16 @@ header.masthead{
 .chartjs-render-monitor {
    height: 30vw !important;
    width: 40vw !important;
+}
+
+.contact-clean form .textLink a{
+   color: #0085a1 !important;
+}
+
+.contact-clean form .textLink a:hover{
+   text-decoration: underline !important;
+}
+
+a:hover{
+   color:#0085a1 !important;
 }

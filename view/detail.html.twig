@@ -3,12 +3,12 @@
    <div class="row">
       <div class="col-sm-12">
            <div class="center">
-               <img class="img-detail" src="../public/assets/ressources/img/{{post.urlImage}}" alt="photo de l'article {{post.title}}">
+               <img class="img-detail" src="./assets/ressources/img/{{post.urlImage}}" alt="photo de l'article {{post.title}}">
            </div>
             <h2 class="post-title center">{{post.title}}</h2>
             <h4 class="post-subtitle center">{{post.lede}}</h4>
             <p class="justify">{{post.text}}</p>
-            <p>Ecrit le {{post.create_date|date("d-m-Y")}} par {{user.lastName}} {{user.firstName}}</p>
+            <p>Ecrit le {{post.create_date|date("d-m-Y")}} par {{user.firstName}} {{user.lastName}}</p>
       </div>
    </div>
 
@@ -21,7 +21,7 @@
    {% for comment in comments %}
       <div class="row comment-post">
          <div>
-            <p class="info-comment">{{comment.first_name}} {{comment.last_name}} {{comment.create_date}}</p>
+            <p class="info-comment"> {{comment.first_name}} {{comment.last_name}} {{comment.create_date|date("d-m-Y")}}</p>
             <p>{{comment.text}} </p>
          </div>
       </div>
@@ -54,3 +54,4 @@
 
 
 {% include 'footer.php' %}
+

@@ -185,6 +185,7 @@ header a {
    margin: 10px;
 }
 
+
 .btn.btn-danger , .btn.btn-primary, .btn.btn-warning{
    border-radius: 25px;
 }
@@ -214,16 +215,16 @@ header a {
     width: 5%;
 }
 
-.tab-users td:nth-child(2),.tab-article td:nth-child(2),.tab-article td:nth-child(4),.tab-comment td:nth-child(2),.tab-comment td:nth-child(4) {
+.tab-users td:nth-child(2),.tab-article td:nth-child(2),.tab-article td:nth-child(4),.tab-comment td:nth-child(2),.tab-comment td:nth-child(3),.tab-comment td:nth-child(5) {
     width: 15%;
 }
 
-.tab-comment td:nth-child(5),.tab-users td:nth-child(6),.tab-article td:nth-child(5){
+.tab-comment td:nth-child(6),.tab-users td:nth-child(6),.tab-article td:nth-child(5){
     width: 20%;
     text-align: center;
 }
 
-.tab-comment th:nth-child(5),.tab-users th:nth-child(6),.tab-article th:nth-child(5){
+.tab-comment th:nth-child(6),.tab-users th:nth-child(6),.tab-article th:nth-child(5){
     text-align: center;
 }
 
@@ -279,4 +280,8 @@ color: white;
    font-size:10px;
 }
 
+
+.modal-body p#fileImg{
+   margin:0px 0px !important;
+}
 

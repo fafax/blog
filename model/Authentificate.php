@@ -4,48 +4,33 @@ namespace App;
 
 class Authentificate
 {
-    // public function add(User $user)
-    // {
-    //    $bdd = new Connexion();
-    //    $bd = $bdd->getBd();
-    //    $response = $bd->prepare('INSERT INTO user (name, password, email) VALUES(:name, :password, :email)');
-    //    $response->bindValue(':name', $user->getName());
-    //    $response->bindValue(':password', $user->getPassword());
-    //    $response->bindValue(':email', $user->getEmail());
-    //    $response->execute();
-    //    $user->setId($this->base->lastInsertId());
-    // }
-
-    public function find(int $id)
+    public function find(int $id): UserEntity
     {
         $bdd = new Connexion();
-        $bd = $bdd->getBd();
-        $response = $bd->prepare('SELECT * FROM user WHERE id_user = :id');
+        $response = $bdd->getBd()->prepare('SELECT * FROM User WHERE id_user = :id');
         $response->bindValue(':id', $id);
         $response->execute();
 
-        return $response->fetchObject('App\userEntity');
+        return $response->fetchObject('App\UserEntity');
     }
 
-    public function findByEmail(string $email)
+    public function findByEmail(string $email): array
     {
         $bdd = new Connexion();
-        $bd = $bdd->getBd();
-        $response = $bd->prepare('SELECT * FROM user WHERE email = :email');
+        $response = $bdd->getBd()->prepare('SELECT * FROM User WHERE email = :email');
         $response->bindValue(':email', $email);
         $response->execute();
 
         return $response->fetch();
     }
 
-    public function checkAuthentification(string $email, string $password)
+    public function checkAuthentification(string $email, string $password): bool
     {
         if ($result = $this->findByEmail($email)) {
-            // if (password_verify($password, $result['password'])) {
             $user = $this->find($result['id_user']);
-            if ($email == $user->getEmail() && $password == $user->getPassword()) {
+            if (password_verify($password, $result['password']) && $email == $user->getEmail()) {
                 $_SESSION['id'] = $user->getIdUser();
-                if ($user->getRoleIdRole() == 1) {
+                if ($user->getRoleIdRole() === 1) {
                     // if id and mdp and (id_role is egale adiminstrator) is correct then connect session and show link administration
                     $_SESSION['admin'] = true;
                 }
@@ -54,8 +39,6 @@ class Authentificate
 
                 return true;
             }
-            // }
-         // return false;
         }
         $_SESSION['id'] = 'noConnect';
 

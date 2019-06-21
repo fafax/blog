@@ -13,7 +13,7 @@ class CommentEntity
     /**
      * Get the value of id_comment.
      */
-    public function getId_comment()
+    public function getId_comment(): int
     {
         return $this->id_comment;
     }
@@ -21,80 +21,64 @@ class CommentEntity
     /**
      * Get the value of text.
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->text;
     }
 
     /**
      * Set the value of text.
-     *
-     * @return  self
      */
-    public function setText($text)
+    public function setText(string $text): void
     {
         $this->text = $text;
-
-        return $this;
     }
 
     /**
      * Get the value of status_id_status.
      */
-    public function getStatusIdStatus()
+    public function getStatusIdStatus(): int
     {
         return $this->status_id_status;
     }
 
     /**
      * Set the value of status_id_status.
-     *
-     * @return  self
      */
-    public function setStatusIdStatus($status_id_status)
+    public function setStatusIdStatus(int $status_id_status): void
     {
         $this->status_id_status = $status_id_status;
-
-        return $this;
     }
 
     /**
      * Get the value of post_id_post.
      */
-    public function getPostIdPost()
+    public function getPostIdPost(): int
     {
         return $this->post_id_post;
     }
 
     /**
      * Set the value of post_id_post.
-     *
-     * @return  self
      */
-    public function setPostIdPost($post_id_post)
+    public function setPostIdPost(int $post_id_post): void
     {
         $this->post_id_post = $post_id_post;
-
-        return $this;
     }
 
     /**
      * Get the value of user_id_user.
      */
-    public function getUserIdUser()
+    public function getUserIdUser(): int
     {
         return $this->user_id_user;
     }
 
     /**
      * Set the value of user_id_user.
-     *
-     * @return  self
      */
-    public function setUserIdUser($user_id_user)
+    public function setUserIdUser(int $user_id_user): void
     {
         $this->user_id_user = $user_id_user;
-
-        return $this;
     }
 }

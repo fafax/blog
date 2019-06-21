@@ -1,43 +1,81 @@
-const page = document.getElementById("page");
-const page2 = document.getElementById("page2");
-const page3 = document.getElementById("page3");
-const page4 = document.getElementById("page4");
+window.addEventListener("DOMContentLoaded", show)
+window.addEventListener("hashchange", show, false);
+
+
+
+
+const pageDashboard = document.getElementById("pageDashboard");
+const pageUsers = document.getElementById("pageUsers");
+const pageArticles = document.getElementById("pageArticles");
+const pageComments = document.getElementById("pageComments");
+
+function show(){
+   // on récupère l'ancre dans l'URL
+   var anchor = window.location.hash;
+   anchor = anchor.substring(1, anchor.length);
+   switch (anchor) {
+      case "dashboard":
+         dashboard();
+         break;
+      case "users":
+         users();
+         break;
+      case "articles":
+         articles();
+         break;
+      case "comments":
+         comments();
+         f_inwait();
+         break;
+      case "commentsValid":
+         comments();
+         f_valid();
+         break;
+      case "commentsInvalid":
+         comments();
+         f_invalid();
+         break;
+      default:
+         dashboard();
+         break;
+   }
+};
 
 
 function dashboard(){
-   if(!page.classList.contains("visible")){
-      page.classList.add("visible");
+   if (!pageDashboard.classList.contains("visible")){
+      pageDashboard.classList.add("visible");
    }
-   page2.classList.remove("visible");
-   page3.classList.remove("visible");
-   page4.classList.remove("visible");
+   pageUsers.classList.remove("visible");
+   pageArticles.classList.remove("visible");
+   pageComments.classList.remove("visible");
    
 }   
 
 function users() {
-   if (!page2.classList.contains("visible")) {
-      page2.classList.add("visible");
+   if (!pageUsers.classList.contains("visible")) {
+      pageUsers.classList.add("visible");
    }
-   page.classList.remove("visible");
-   page3.classList.remove("visible");
-   page4.classList.remove("visible");
+   pageDashboard.classList.remove("visible");
+   pageArticles.classList.remove("visible");
+   pageComments.classList.remove("visible");
 } 
 function articles() {
-   if (!page3.classList.contains("visible")) {
-      page3.classList.add("visible");
+   if (!pageArticles.classList.contains("visible")) {
+      pageArticles.classList.add("visible");
    }
-   page2.classList.remove("visible");
-   page.classList.remove("visible");
-   page4.classList.remove("visible");
+   pageUsers.classList.remove("visible");
+   pageDashboard.classList.remove("visible");
+   pageComments.classList.remove("visible");
 } 
 
 function comments() {
-   if (!page4.classList.contains("visible")) {
-      page4.classList.add("visible");
+   if (!pageComments.classList.contains("visible")) {
+      pageComments.classList.add("visible");
    }
-   page2.classList.remove("visible");
-   page.classList.remove("visible");
-   page3.classList.remove("visible");
+   pageUsers.classList.remove("visible");
+   pageDashboard.classList.remove("visible");
+   pageArticles.classList.remove("visible");
 } 
 
 const tabInwait = document.getElementById("inwait-tab");
@@ -79,3 +117,8 @@ function f_invalid() {
    inwait.classList.remove("active");
    valid.classList.remove("active");
 }
+
+
+
+
+

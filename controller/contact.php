@@ -25,3 +25,4 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
 }
 
 echo $twig->render('contact.html.twig', ['message' => $messageEmail, 'title' => 'Contact', 'class' => $class]);
+

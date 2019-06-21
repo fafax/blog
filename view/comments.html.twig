@@ -3,13 +3,13 @@
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
    <li class="nav-item">
-      <a class="nav-link active" id="inwait-tab" onclick="f_inwait()" href="#" role="tab" aria-controls="inwait">En attente</a>
+      <a class="nav-link active" id="inwait-tab" href="index.php?post=administration#comments" role="tab" aria-controls="inwait">En attente</a>
    </li>
    <li class="nav-item">
-      <a class="nav-link" id="valid-tab" onclick="f_valid()" href="#" role="tab" aria-controls="valid">Validé</a>
+      <a class="nav-link" id="valid-tab" href="index.php?post=administration#commentsValid" role="tab" aria-controls="valid">Validé</a>
    </li>
    <li class="nav-item">
-      <a class="nav-link" id="invalid-tab" onclick="f_invalid()" href="#" role="tab" aria-controls="invalid">Refusé</a>
+      <a class="nav-link" id="invalid-tab" href="index.php?post=administration#commentsInvalid" role="tab" aria-controls="invalid">Refusé</a>
    </li>
 </ul>
 <div class="tab-content">
@@ -19,42 +19,28 @@
             <tr>
                <th scope="col">#</th>
                <th scope="col">Date de création</th>
+               <th scope="col">N° de l'article</th>
                <th scope="col">Commentaire</th>
                <th scope="col">Utilisateur</th>
                <th scope="col">Action</th>
             </tr>
          </thead>
          <tbody>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-               <td>
-                  <button class="btn btn-danger btn-table">Refuser</button>
-                  <button class="btn btn-primary btn-table">Valider</button>
-               </td>
-            </tr>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-               <td>
-                  <button class="btn btn-danger btn-table">Refuser</button>
-                  <button class="btn btn-primary btn-table">Valider</button>
-               </td>
-            </tr>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-               <td>
-                  <button class="btn btn-danger btn-table">Refuser</button>
-                  <button class="btn btn-primary btn-table">Valider</button>
-               </td>
-            </tr>
+            {% for comment in allComment %}
+               <tr>
+                  {% if  comment.status == "inwait" %}
+                     <th scope="row">{{comment.id_comment}}</th>
+                     <td>{{comment.create_date |date("d-m-Y")}}</td>
+                     <td>{{comment.Post_id_post}}</td>
+                     <td>{{comment.text}}</td>
+                     <td>{{comment.last_name}} {{comment.first_name}}</td>
+                     <td>
+                       <a href="index.php?post=administration&action=invalidComment&id={{comment.id_comment}}#comments"><button class="btn btn-danger btn-table">Refuser</button></a> 
+                       <a href="index.php?post=administration&action=valideComment&id={{comment.id_comment}}#comments"><button class="btn btn-primary btn-table">Valider</button></a> 
+                     </td>
+                  {% endif %}
+               </tr>
+            {% endfor %}
          </tbody>
       </table>
    </div>
@@ -64,29 +50,26 @@
             <tr>
                <th scope="col">#</th>
                <th scope="col">Date de création</th>
+               <th scope="col">N° de l'article</th>
                <th scope="col">Commentaire</th>
                <th scope="col">Utilisateur</th>
+               <th scope="col">Action</th>
             </tr>
          </thead>
          <tbody>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-            </tr>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-            </tr>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-            </tr>
+            {% for comment in allComment %}
+               <tr>
+                  {% if  comment.status == "valid" %}
+                     <th scope="row">{{comment.id_comment}}</th>
+                     <td>{{comment.create_date |date("d-m-Y")}}</td>
+                     <td>{{comment.Post_id_post}}</td>
+                     <td>{{comment.text}}</td>
+                     <td>{{comment.last_name}} {{comment.first_name}}</td>
+                     <td><a href="index.php?post=administration&action=invalidComment&id={{comment.id_comment}}#comments"><button
+                           class="btn btn-danger btn-table">Refuser</button></a></td>
+                  {% endif %}
+               </tr>
+            {% endfor %}
          </tbody>
       </table>
    </div>
@@ -96,30 +79,36 @@
                   <tr>
                      <th scope="col">#</th>
                      <th scope="col">Date de création</th>
+                     <th scope="col">N° de l'article</th>
                      <th scope="col">Commentaire</th>
                      <th scope="col">Utilisateur</th>
+                     <th scope="col">Action</th>
                   </tr>
                </thead>
                <tbody>
-                  <tr>
-                     <th scope="row">1</th>
-                     <td>Jean</td>
-                     <td>Jean</td>
-                     <td>Jean</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">1</th>
-                     <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">1</th>
-                     <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                  </tr>
+                  {% for comment in allComment %}
+                     <tr>
+                        {% if  comment.status == "invalid" %}
+                           <th scope="row">{{comment.id_comment}}</th>
+                           <td>{{comment.create_date |date("d-m-Y")}}</td>
+                           <td>{{comment.Post_id_post}}</td>
+                           <td>{{comment.text}}</td>
+                           <td>{{comment.last_name}} {{comment.first_name}}</td>
+                           <td>
+                              <a href="index.php?post=administration&action=valideComment&id={{comment.id_comment}}#comments">
+                                 <button class="btn btn-primary btn-table">Valider</button>
+                              </a>
+                              <a href="index.php?post=administration&action=deleteComment&id={{comment.id_comment}}#comments" onclick="return(confirm('Voulez vous supprimer deffinitivement ce commentaire ?'));">
+                                 <button class="btn btn-danger btn-table">Supprimer</button>
+                              </a>
+                           </td>
+                        {% endif %}
+                     </tr>
+                  {% endfor %}
                </tbody>
             </table>
-   </div>
+      </div>
 </div>
+
+
+
