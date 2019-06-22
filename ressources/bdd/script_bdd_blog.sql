@@ -190,3 +190,5 @@ INSERT INTO User
    (first_name, last_name, email, url_img, create_date, password, Role_id_role)
 VALUES
    ( "Fabien", "HAMAYON", "admin@admin.fr", " ", "2019-04-04", "$2y$10$3NtvvTdPoHlxVcAxx4KcT.gSwbFPEERq6.NyY/Y4L7Z058778osP2", 1 );
+
+   

@@ -116,3 +116,5 @@ class PostEntity
         $this->User_id_user = $user_id_user;
     }
 }
+
+

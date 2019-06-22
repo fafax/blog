@@ -36,3 +36,4 @@ if (isset($_GET['post'])) {
     header('Location: index.php?post=home');
 }
 
+

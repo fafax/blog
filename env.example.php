@@ -9,3 +9,5 @@ class Env
     public static $login = 'root';
     public static $pwd = '';
 }
+
+
