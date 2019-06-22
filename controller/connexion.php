@@ -45,5 +45,3 @@ if ($connexion) {
       'idSession' => $_SESSION['id'],
       ]);
 }
-
-

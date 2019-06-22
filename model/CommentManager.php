@@ -68,5 +68,3 @@ class CommentManager
         $req->execute();
     }
 }
-
-

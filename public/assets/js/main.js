@@ -23,4 +23,3 @@ function cancelComment(event){
 if (btnCancel){
    btnCancel.addEventListener("click", cancelComment);
 }
-

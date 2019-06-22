@@ -133,5 +133,3 @@ class UserEntity
         $this->Role_id_role = $Role_id_role;
     }
 }
-
-

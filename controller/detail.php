@@ -21,6 +21,3 @@ echo $twig->render('detail.html.twig',
       'title' => $post->getTitle(),
       'count' => sizeof($comment),
    ]);
-
-
-   

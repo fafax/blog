@@ -34,5 +34,4 @@ VALUES
    ("je suis un commentaire (2)", "2019-04-19", 2, 2, 4),
    ("je suis un commentaire (3)", "2019-04-20", 3, 3, 1),
    ("je suis un commentaire (4)", "2019-04-18", 1, 1, 1);
-
    

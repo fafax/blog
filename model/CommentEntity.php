@@ -82,5 +82,3 @@ class CommentEntity
         $this->user_id_user = $user_id_user;
     }
 }
-
-

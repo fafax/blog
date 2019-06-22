@@ -117,8 +117,3 @@ function f_invalid() {
    inwait.classList.remove("active");
    valid.classList.remove("active");
 }
-
-
-
-
-

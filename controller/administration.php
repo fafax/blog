@@ -111,5 +111,3 @@ if (isset($_SESSION['admin'])) {
 } else {
     header('LOCATION:index.php?post=home');
 }
-
-

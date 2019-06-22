@@ -58,4 +58,3 @@ class UserManager
         $response->execute();
     }
 }
-
