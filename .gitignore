@@ -4,4 +4,4 @@ env.php
 
 # keep some hiddens
 !.htaccess
-!/.gitignore
+!.gitignore
