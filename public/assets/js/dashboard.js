@@ -9,39 +9,6 @@ const pageUsers = document.getElementById("pageUsers");
 const pageArticles = document.getElementById("pageArticles");
 const pageComments = document.getElementById("pageComments");
 
-function show(){
-   // on récupère l'ancre dans l'URL
-   var anchor = window.location.hash;
-   anchor = anchor.substring(1, anchor.length);
-   switch (anchor) {
-      case "dashboard":
-         dashboard();
-         break;
-      case "users":
-         users();
-         break;
-      case "articles":
-         articles();
-         break;
-      case "comments":
-         comments();
-         f_inwait();
-         break;
-      case "commentsValid":
-         comments();
-         f_valid();
-         break;
-      case "commentsInvalid":
-         comments();
-         f_invalid();
-         break;
-      default:
-         dashboard();
-         break;
-   }
-}
-
-
 function dashboard(){
    if (!pageDashboard.classList.contains("visible")){
       pageDashboard.classList.add("visible");
@@ -116,4 +83,36 @@ function f_invalid() {
    tabValid.classList.remove("active");
    inwait.classList.remove("active");
    valid.classList.remove("active");
+}
+
+function show() {
+   // on récupère l'ancre dans l'URL
+   var anchor = window.location.hash;
+   anchor = anchor.substring(1, anchor.length);
+   switch (anchor) {
+      case "dashboard":
+         dashboard();
+         break;
+      case "users":
+         users();
+         break;
+      case "articles":
+         articles();
+         break;
+      case "comments":
+         comments();
+         f_inwait();
+         break;
+      case "commentsValid":
+         comments();
+         f_valid();
+         break;
+      case "commentsInvalid":
+         comments();
+         f_invalid();
+         break;
+      default:
+         dashboard();
+         break;
+   }
 }
