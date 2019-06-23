@@ -39,7 +39,7 @@ function show(){
          dashboard();
          break;
    }
-};
+}
 
 
 function dashboard(){
