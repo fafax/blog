@@ -1,23 +1,18 @@
-window.addEventListener("DOMContentLoaded", show)
-window.addEventListener("hashchange", show, false);
-
-
-
 
 const pageDashboard = document.getElementById("pageDashboard");
 const pageUsers = document.getElementById("pageUsers");
 const pageArticles = document.getElementById("pageArticles");
 const pageComments = document.getElementById("pageComments");
 
-function dashboard(){
-   if (!pageDashboard.classList.contains("visible")){
+function dashboard() {
+   if (!pageDashboard.classList.contains("visible")) {
       pageDashboard.classList.add("visible");
    }
    pageUsers.classList.remove("visible");
    pageArticles.classList.remove("visible");
    pageComments.classList.remove("visible");
-   
-}   
+
+}
 
 function users() {
    if (!pageUsers.classList.contains("visible")) {
@@ -26,7 +21,7 @@ function users() {
    pageDashboard.classList.remove("visible");
    pageArticles.classList.remove("visible");
    pageComments.classList.remove("visible");
-} 
+}
 function articles() {
    if (!pageArticles.classList.contains("visible")) {
       pageArticles.classList.add("visible");
@@ -34,16 +29,16 @@ function articles() {
    pageUsers.classList.remove("visible");
    pageDashboard.classList.remove("visible");
    pageComments.classList.remove("visible");
-} 
+}
 
-function comments() {
+function fComments() {
    if (!pageComments.classList.contains("visible")) {
       pageComments.classList.add("visible");
    }
    pageUsers.classList.remove("visible");
    pageDashboard.classList.remove("visible");
    pageArticles.classList.remove("visible");
-} 
+}
 
 const tabInwait = document.getElementById("inwait-tab");
 const tabValid = document.getElementById("valid-tab");
@@ -52,7 +47,7 @@ const inwait = document.getElementById("inwait");
 const valid = document.getElementById("valid");
 const invalid = document.getElementById("invalid");
 
-function f_inwait() {
+function fInwait() {
    if (!tabInwait.classList.contains("active")) {
       tabInwait.classList.add("active");
       inwait.classList.add("active");
@@ -63,7 +58,7 @@ function f_inwait() {
    invalid.classList.remove("active");
 }
 
-function f_valid() {
+function fValid() {
    if (!tabValid.classList.contains("active")) {
       tabValid.classList.add("active");
       valid.classList.add("active");
@@ -74,7 +69,7 @@ function f_valid() {
    invalid.classList.remove("active");
 }
 
-function f_invalid() {
+function fInvalid() {
    if (!tabInvalid.classList.contains("active")) {
       tabInvalid.classList.add("active");
       invalid.classList.add("active");
@@ -85,34 +80,55 @@ function f_invalid() {
    valid.classList.remove("active");
 }
 
+function comments() {
+   fComments();
+   fInwait();
+}
+function commentsValid() {
+   fComments();
+   fValid();
+}
+
+function commentsInvalid() {
+   fComments();
+   fInvalid();
+}
+
+function callFunction(functionName) {
+   eval(`${functionName}()`)
+}
+
+let rFunction;
+
 function show() {
    // on récupère l'ancre dans l'URL
-   var anchor = window.location.hash;
+   let anchor = window.location.hash;
    anchor = anchor.substring(1, anchor.length);
+   var rFunction;
    switch (anchor) {
       case "dashboard":
-         dashboard();
+         rFunction = "dashboard";
          break;
       case "users":
-         users();
+         rFunction = "users";
          break;
       case "articles":
-         articles();
+         rFunction = "articles";
          break;
       case "comments":
-         comments();
-         f_inwait();
+         rFunction = "comments";
          break;
       case "commentsValid":
-         comments();
-         f_valid();
+         rFunction = "commentsValid";
          break;
       case "commentsInvalid":
-         comments();
-         f_invalid();
+         rFunction = "commentsInvalid";
          break;
       default:
-         dashboard();
+         rFunction = "dashboard";
          break;
    }
+   callFunction(rFunction);
 }
+window.addEventListener("DOMContentLoaded", show)
+window.addEventListener("hashchange", show, false);
