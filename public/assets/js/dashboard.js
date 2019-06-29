@@ -4,42 +4,6 @@ const pageUsers = document.getElementById("pageUsers");
 const pageArticles = document.getElementById("pageArticles");
 const pageComments = document.getElementById("pageComments");
 
-function dashboard() {
-   if (!pageDashboard.classList.contains("visible")) {
-      pageDashboard.classList.add("visible");
-   }
-   pageUsers.classList.remove("visible");
-   pageArticles.classList.remove("visible");
-   pageComments.classList.remove("visible");
-
-}
-
-function users() {
-   if (!pageUsers.classList.contains("visible")) {
-      pageUsers.classList.add("visible");
-   }
-   pageDashboard.classList.remove("visible");
-   pageArticles.classList.remove("visible");
-   pageComments.classList.remove("visible");
-}
-function articles() {
-   if (!pageArticles.classList.contains("visible")) {
-      pageArticles.classList.add("visible");
-   }
-   pageUsers.classList.remove("visible");
-   pageDashboard.classList.remove("visible");
-   pageComments.classList.remove("visible");
-}
-
-function fComments() {
-   if (!pageComments.classList.contains("visible")) {
-      pageComments.classList.add("visible");
-   }
-   pageUsers.classList.remove("visible");
-   pageDashboard.classList.remove("visible");
-   pageArticles.classList.remove("visible");
-}
-
 const tabInwait = document.getElementById("inwait-tab");
 const tabValid = document.getElementById("valid-tab");
 const tabInvalid = document.getElementById("invalid-tab");
@@ -47,88 +11,74 @@ const inwait = document.getElementById("inwait");
 const valid = document.getElementById("valid");
 const invalid = document.getElementById("invalid");
 
-function fInwait() {
-   if (!tabInwait.classList.contains("active")) {
-      tabInwait.classList.add("active");
-      inwait.classList.add("active");
+const pageTab = [pageDashboard, pageUsers, pageArticles, pageComments]
+
+const tabComment = [tabInwait, tabValid, tabInvalid, inwait, valid, invalid, pageComments]
+
+function changePage(page) {
+   if (pageTab.includes(page)) {
+      pageTab.forEach(element => {
+         if (element.classList.contains("visible"))
+            element.classList.remove("visible");
+      });
+      page.classList.add("visible");
    }
-   tabValid.classList.remove("active");
-   tabInvalid.classList.remove("active");
-   valid.classList.remove("active");
-   invalid.classList.remove("active");
-}
-
-function fValid() {
-   if (!tabValid.classList.contains("active")) {
-      tabValid.classList.add("active");
-      valid.classList.add("active");
+   if (tabComment.includes(page)) {
+      tabComment.forEach(element => {
+         if (element.classList.contains("active"))
+            element.classList.remove("active");
+      });
+      if (page === pageComments) {
+         inwait.classList.add("active");
+      }
+      page.classList.add("active");
+      switch (page) {
+         case tabValid:
+            valid.classList.add("active");
+            pageComments.classList.add("visible");
+            break;
+         case tabInvalid:
+            invalid.classList.add("active");
+            pageComments.classList.add("visible");
+            break;
+         default:
+            tabInwait.classList.add("active");
+      }
    }
-   tabInwait.classList.remove("active");
-   tabInvalid.classList.remove("active");
-   inwait.classList.remove("active");
-   invalid.classList.remove("active");
+
 }
 
-function fInvalid() {
-   if (!tabInvalid.classList.contains("active")) {
-      tabInvalid.classList.add("active");
-      invalid.classList.add("active");
-   }
-   tabInwait.classList.remove("active");
-   tabValid.classList.remove("active");
-   inwait.classList.remove("active");
-   valid.classList.remove("active");
-}
-
-function comments() {
-   fComments();
-   fInwait();
-}
-function commentsValid() {
-   fComments();
-   fValid();
-}
-
-function commentsInvalid() {
-   fComments();
-   fInvalid();
-}
-
-function callFunction(functionName) {
-   eval(`${functionName}()`)
-}
-
-let rFunction;
 
 function show() {
    // on récupère l'ancre dans l'URL
    let anchor = window.location.hash;
    anchor = anchor.substring(1, anchor.length);
-   var rFunction;
+   console.log(anchor)
+   let page;
    switch (anchor) {
       case "dashboard":
-         rFunction = "dashboard";
+         page = pageDashboard;
          break;
       case "users":
-         rFunction = "users";
+         page = pageUsers;
          break;
       case "articles":
-         rFunction = "articles";
+         page = pageArticles;
          break;
       case "comments":
-         rFunction = "comments";
+         page = pageComments;
          break;
       case "commentsValid":
-         rFunction = "commentsValid";
+         page = tabValid;
          break;
       case "commentsInvalid":
-         rFunction = "commentsInvalid";
+         page = tabInvalid;
          break;
       default:
-         rFunction = "dashboard";
+         page = pageDashboard;
          break;
    }
-   callFunction(rFunction);
+   changePage(page);
 }
 window.addEventListener("DOMContentLoaded", show)
 window.addEventListener("hashchange", show, false);
