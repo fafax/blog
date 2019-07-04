@@ -32,7 +32,7 @@ class UserEntity
     /**
      * Set the value of first_name.
      */
-    public function setFirstName(string $first_name)
+    public function setFirstName(string $first_name): void
     {
         $this->first_name = $first_name;
     }

@@ -1,5 +1,5 @@
 <?php
 
-session_abort();
+session_destroy();
 
 header('LOCATION:index.php?post=home');
