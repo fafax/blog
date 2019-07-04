@@ -53,7 +53,6 @@ function show() {
    // on récupère l'ancre dans l'URL
    let anchor = window.location.hash;
    anchor = anchor.substring(1, anchor.length);
-   console.log(anchor)
    let page;
    switch (anchor) {
       case "dashboard":
