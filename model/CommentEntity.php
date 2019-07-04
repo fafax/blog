@@ -13,7 +13,7 @@ class CommentEntity
     /**
      * Get the value of id_comment.
      */
-    public function getId_comment(): int
+    public function getIdComment(): int
     {
         return $this->id_comment;
     }
