@@ -1,0 +1,7 @@
+# ignore Composer downloads
+/vendor/*
+env.php
+
+# keep some hiddens
+!.htaccess
+!.gitignore

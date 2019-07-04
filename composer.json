@@ -1,0 +1,22 @@
+{
+   "authors": [
+      {
+         "name": "Fabien HAMAYON",
+         "email": "fabienhamayon@free.fr",
+         "homepage": "http://codeassemblydev.fr/",
+         "role": "Developer"
+      }
+   ],
+    "require": {
+        "twig/twig": "^2.0",
+        "twbs/bootstrap": "^4.3"
+    },
+   "autoload": {
+      "psr-4": {
+         "App\\": "model"
+      }
+   },
+   "support": {
+         "email": "fabienhamayon@free.fr"
+      }
+}

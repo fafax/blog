@@ -1,0 +1,53 @@
+{% include 'header.php' %}
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12">
+           <div class="center">
+               <img class="img-detail" src="./assets/ressources/img/{{post.urlImage}}" alt="photo de l'article {{post.title}}">
+           </div>
+            <h2 class="post-title center">{{post.title}}</h2>
+            <h4 class="post-subtitle center">{{post.lede}}</h4>
+            <p class="justify">{{post.text}}</p>
+            <p>Ecrit le {{post.create_date|date("d-m-Y")}} par {{user.firstName}} {{user.lastName}}</p>
+      </div>
+   </div>
+
+   {% if count <= 1 %}
+   <h6>Commentaire ({{count}})</h6>
+   {% else %}
+   <h6>Commentaires ({{count}})</h6>
+   {%endif%}
+   <hr>
+   {% for comment in comments %}
+      <div class="row comment-post">
+         <div>
+            <p class="info-comment"> {{comment.first_name}} {{comment.last_name}} {{comment.create_date|date("d-m-Y")}}</p>
+            <p>{{comment.text}} </p>
+         </div>
+      </div>
+   {% endfor %}
+
+   <button class="btn btn-primary" href="#" onclick="addComment()" id="btn-add-comment">Ajouter un commentaire</button>
+
+   <form class="form-comment invisible" id="btn-comment" action="#" method="POST">
+      {% if session.id == 0  and session.id == null %}
+         <div class="container-Error">
+            <p class="error">Vous devez vous connectez pour pouvoir ajouter un commentaire</p>
+         </div>
+      {% endif %}
+      <label for="inputComment">Commentaire</label>
+      <input type="text" class="form-control" id="inputComment" name="comment" placeholder="Votre commentaire"
+         aria-describedby="commentInfo">
+      <small id="commentInfo" class="form-text text-muted">
+         Votre commentaire ne sera affiché qu'après validation de l'administrateur.
+      </small>
+      <div class="all-btn-comment">
+         <button class="btn btn-warning" id="btn-cancel">Annuler</button>
+         <button class="btn btn-primary" href="#" type="submit">Valider</button>
+      </div>
+      
+   </form>
+
+</div>
+
+{% include 'footer.php' %}

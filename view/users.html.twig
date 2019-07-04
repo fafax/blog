@@ -1,0 +1,31 @@
+<h4>Liste des uilisateurs</h4>
+<br>
+<table class="table tab-users">
+   <thead class="thead-dark">
+      <tr>
+         <th scope="col">#</th>
+         <th scope="col">Date de création</th>
+         <th scope="col">Nom</th>
+         <th scope="col">Prénom</th>
+         <th scope="col">Rôle</th>
+         <th scope="col">Action</th>
+      </tr>
+   </thead>
+   <tbody>
+
+      {% for user in users %}
+         <tr>
+            <th scope="row">{{user.id_user}}</th>
+            <td>{{user.create_date |date("d-m-Y")}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.role}}</td>
+            <td>
+               <a href="index.php?post=administration&action=deleteUser&id={{user.id_user}}#users"><button class="btn btn-danger btn-table">Supprimer</button></a> 
+            </td>
+         </tr>
+      {% endfor %}
+
+
+   </tbody>
+</table>

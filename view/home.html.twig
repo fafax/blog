@@ -1,0 +1,24 @@
+{% include 'header.php' %}
+
+   <div class="container">
+   {% for post in posts %}
+        <div class="row post-list">
+               <div class="col-md-12 col-lg-8">
+                     <div class="post-preview">
+                        <a href="index.php?post={{post.id_post}}">
+                           <h2 class="post-title">{{post.title}}</h2>
+                           <h3 class="post-subtitle">{{post.lede}}</h3>
+                        </a>
+                        <p class="post-meta">Créer par {{post.first_name}} {{post.last_name}} le  {{post.create_date|date("d-m-Y")}}</p>
+                     </div>
+                  </div>
+                  <div class="col-md-12 col-lg-4">
+                     <img class="img-post" src="./assets/ressources/img/{{post.url_image}}" alt="phote de l'article {{post.title}}">
+                  </div>
+               
+            </div>
+        
+      {% endfor %}
+    </div>
+
+{% include 'footer.php' %}
