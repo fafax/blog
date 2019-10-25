@@ -61,7 +61,7 @@ To access the administrator function log in with id: admin@admin.fr password: te
 
 ## Support
 
-To test the block you can test here :[Blog PHP](http://p5.codeassemblydev.fr/index.php?post=home) is an open source project.
+To test the block you can test here :[Blog PHP](https://p5.codeassemblydev.fr/index.php?post=home) is an open source project.
 
 ## Stay in touch
 
