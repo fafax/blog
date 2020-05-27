@@ -2,11 +2,26 @@
 
 require '../vendor/autoload.php';
 
-$postManager = new App\PostManager();
+$messageEmail = null;
+$class = null;
 
-$data = $postManager->getAllPost();
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+    $to = 'fabienhamayon@free.fr';
+    $subject = 'Message envoyer du formulaire de contact';
 
-if (isset($_POST['identifiant']) && isset($_POST['mdp'])) {
+    $message = '<html><head></head><body>'.htmlentities($_POST['message']).'<br>'.htmlentities($_POST['name']).'</body></html>';
+
+    $headers = 'From:'.htmlentities($_POST['email'])."\r\n";
+    $headers .= 'MIME-Version: 1.0'."\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8'."\r\n";
+
+    if (mail($to, $subject, $message, $headers)) {
+        $messageEmail = 'Votre email a bien été envoyé.';
+        $class = 'sendMail';
+    } else {
+        $messageEmail = "Une erreur c'est produite lors de l'envoi de votre email.";
+        $class = 'errorSendMail';
+    }
 }
 
-echo $twig->render('home.html.twig', ['posts' => $data, 'title' => 'Articles']);
+echo $twig->render('home.html.twig', ['title' => 'Accueil', 'message' => $messageEmail, 'class' => $class]);

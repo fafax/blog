@@ -17,11 +17,8 @@ if (isset($_GET['post'])) {
       case 'connexion':
          require_once '../controller/connexion.php';
          break;
-      case 'about':
-         require_once '../controller/about.php';
-         break;
-      case 'contact':
-         require_once '../controller/contact.php';
+      case 'posts':
+         require_once '../controller/posts.php';
          break;
       case 'deconnexion':
          require_once '../controller/deconnexion.php';

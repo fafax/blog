@@ -1,24 +1,54 @@
 {% include 'header.php' %}
 
+<div class="highlight-phone">
    <div class="container">
-   {% for post in posts %}
-        <div class="row post-list">
-               <div class="col-md-12 col-lg-8">
-                     <div class="post-preview">
-                        <a href="index.php?post={{post.id_post}}">
-                           <h2 class="post-title">{{post.title}}</h2>
-                           <h3 class="post-subtitle">{{post.lede}}</h3>
-                        </a>
-                        <p class="post-meta">Créer par {{post.first_name}} {{post.last_name}} le  {{post.create_date|date("d-m-Y")}}</p>
-                     </div>
-                  </div>
-                  <div class="col-md-12 col-lg-4">
-                     <img class="img-post" src="./assets/ressources/img/{{post.url_image}}" alt="phote de l'article {{post.title}}">
-                  </div>
-               
+      <div class="row">
+         <div class="col-md-8">
+            <div class="intro">
+               <h2>Fabien Hamayon</h2>
+               <h5>Développeur Web</h5>
+               <div class="text-about">
+                  <p>En perpétuelle formation, afin d'être a la pointe de toutes les nouvelles technologies, je suis
+                     aujourd'hui un développeur complet et passionné.</p>
+                  <p>Vous avez une idée numérique, je suis là pour vous accompagner dans la réflexion ainsi que le
+                     développement de votre projet</p>
+                  <p>Pour toutes questions, vous avez a votre disposition un formulaire de contact ci-dessous et je m'engage à vous faire une réponse
+                     dans les plus bref délai</p>
+               </div>
+               <a class="btn btn-primary" href="./assets/ressources/cvFabien.pdf" download="cvFabien.pdf">Télécharger
+                  mon CV</a>
             </div>
-        
-      {% endfor %}
-    </div>
+         </div>
+         <div class="col-sm-4">
+            <div class="d-none d-md-block iphone-mockup"><img class="device" src="./assets/ressources/img/iphone.svg">
+               <div class="screen"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+   <div class="contact-clean">
+      <div class="container-Error">
+         <p class="{{class}}">{{message}}</p>
+      </div>
+      <form method="post" action="./index.php?post=home" method="POST">
+         <h2 class="text-center">Contactez-moi</h2>
+         <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Nom">
+         </div>
+         <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email">
+   
+         </div>
+         <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Message" rows="25"></textarea>
+         </div>
+         <div class="form-group btn-center">
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+         </div>
+      </form>
+   
+   </div>
 
 {% include 'footer.php' %}
